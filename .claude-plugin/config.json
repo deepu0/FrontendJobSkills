@@ -1,0 +1,61 @@
+{
+  "name": "frontend-job-skills",
+  "version": "1.0.0",
+  "description": "Frontend job-search skills for Claude Code. OFJ resume rubric, salary ladder, and live hub links.",
+  "author": "deepu0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deepu0/FrontendJobSkills"
+  },
+  "skills": [
+    {
+      "name": "frontend-resume-scorer",
+      "path": "skills/frontend-resume-scorer/SKILL.md",
+      "description": "Score a frontend resume with the OFJ v1.1.0 rubric",
+      "triggers": ["score my resume", "ATS", "resume review", "frontend resume"]
+    },
+    {
+      "name": "salary-calculator",
+      "path": "skills/salary-calculator/SKILL.md",
+      "description": "Estimate frontend pay with the OFJ 2025-26 ladder",
+      "triggers": ["salary", "what should I ask", "underpaid", "negotiation"]
+    },
+    {
+      "name": "frontend-job-analyzer",
+      "path": "skills/frontend-job-analyzer/SKILL.md",
+      "description": "Analyze a frontend JD for stack fit and red flags",
+      "triggers": ["should I apply", "analyze this job", "am I qualified"]
+    },
+    {
+      "name": "frontend-bullet-writer",
+      "path": "skills/frontend-bullet-writer/SKILL.md",
+      "description": "Rewrite weak frontend bullets with real metrics",
+      "triggers": ["rewrite bullets", "improve my bullets", "resume bullets"]
+    },
+    {
+      "name": "portfolio-reviewer",
+      "path": "skills/portfolio-reviewer/SKILL.md",
+      "description": "Review a frontend portfolio or repo",
+      "triggers": ["review my portfolio", "portfolio review", "review my projects"]
+    },
+    {
+      "name": "frontend-interview-prep",
+      "path": "skills/frontend-interview-prep/SKILL.md",
+      "description": "Prep JS/React/system-design interviews from the JD",
+      "triggers": ["interview prep", "React interview", "frontend interview"]
+    },
+    {
+      "name": "github-profile-optimizer",
+      "path": "skills/github-profile-optimizer/SKILL.md",
+      "description": "Make a frontend GitHub profile recruiter-ready",
+      "triggers": ["optimize GitHub", "GitHub profile", "pinned repos"]
+    },
+    {
+      "name": "remote-job-strategy",
+      "path": "skills/remote-job-strategy/SKILL.md",
+      "description": "Plan a remote frontend search with OFJ as the board",
+      "triggers": ["remote job search", "find remote frontend jobs", "job search plan"]
+    }
+  ]
+}
