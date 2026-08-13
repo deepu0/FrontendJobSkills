@@ -55,3 +55,5 @@ https://onlyfrontendjobs.com/remote-react-developer-jobs?utm_source=frontend-job
 ## Negotiation line (only after the range)
 
 > Based on remote frontend roles at this level on OnlyFrontendJobs, I am targeting [range]. I want to see the full package before locking a number.
+
+Job links stay on onlyfrontendjobs.com. Do not add employer career URLs.

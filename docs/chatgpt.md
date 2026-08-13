@@ -1,17 +1,19 @@
 # ChatGPT plugin (2026)
 
-The 2023 ChatGPT plugin store (`ai-plugin.json`) is gone. OpenAI now uses **skills** (SKILL.md) packaged as a **plugin**.
+The 2023 ChatGPT plugin store (`ai-plugin.json`) is gone. OpenAI now uses **skills** packaged as a **plugin**.
 
-This repo is already a skills-only plugin. No MCP server. No live job API.
+**Frontend Job Skills** = 11 workflows for frontend developers: resume scoring, JD analysis, tailoring, interview prep, salary, and job search — all ending on [OnlyFrontendJobs](https://onlyfrontendjobs.com). Not a generic resume pack. No login in the plugin.
+
+Live job cards use the OFJ public API when deployed (`/api/public/jobs`). ChatGPT MCP wiring ships in plugin v1.2 after production is verified.
 
 ## What you can do today
 
 ### A. ChatGPT Skills upload (fastest for you)
 
-Needs a ChatGPT plan that has **Skills** (Business / Enterprise / Edu / Healthcare on web; also Codex / desktop). Personal Plus may not show the Skills tab.
+Needs access to **Skills**. Availability depends on plan, workspace settings, role, region, and surface. Workspace admins can need to enable Skills and skill uploads. Personal Skills are added separately on web/mobile and desktop.
 
-1. Open https://chatgpt.com/skills
-2. **Create → Upload from your computer**
+1. In the ChatGPT sidebar, open **Plugins** → **Skills**
+2. Select **Create → Upload from your computer**
 3. Upload `dist/frontend-job-skills-plugin.zip` (build it below)
 4. After scan, **Install**
 5. New chat → type `@` → pick **Frontend Job Skills** or a skill name
@@ -25,7 +27,7 @@ Build the zip:
 
 Output: `dist/frontend-job-skills-plugin.zip`
 
-The archive root has `.claude-plugin/plugin.json` and `skills/<name>/SKILL.md`, which is what [OpenAI's skills-only upload](https://developers.openai.com/plugins/guides/submit-claude-plugin) expects.
+The archive root has `.claude-plugin/plugin.json` and `skills/<name>/SKILL.md`, which is what [OpenAI's skills-only upload](https://developers.openai.com/plugins/guides/submit-claude-plugin) expects. See [Skills in ChatGPT](https://help.openai.com/en/articles/20001066) for the current in-product upload flow.
 
 ### B. ChatGPT desktop / Codex local plugin
 
@@ -34,10 +36,16 @@ Already wired in this repo:
 - `.codex-plugin/plugin.json`
 - `.agents/plugins/marketplace.json`
 
-1. Open this folder as the project, or add the repo as a marketplace source
-2. Restart ChatGPT desktop
-3. Plugins directory → local / repo source → **Frontend Job Skills** → install
-4. Work chat → `@Frontend Job Skills`
+On another machine:
+
+```bash
+git clone https://github.com/deepu0/FrontendJobSkills.git
+cd FrontendJobSkills
+codex plugin marketplace add .
+codex plugin add frontend-job-skills@frontend-job-skills-repo
+```
+
+Then open a Work chat and use `@Frontend Job Skills`.
 
 Personal copy (this machine, **installed and enabled** via Codex):
 
@@ -49,6 +57,8 @@ codex plugin add frontend-job-skills@personal
 
 Verified: `frontend-job-skills@personal  installed, enabled  1.1.0`
 
+Run `codex plugin list` to confirm the installed version and enabled status.
+
 ### C. Public plugin directory
 
 Follow [Submit plugins](https://developers.openai.com/plugins/deploy/submission).
@@ -59,9 +69,9 @@ Blocked here: portal is login + Cloudflare. Needs Apps Management write + verifi
 
 ## What this is not
 
-- Not an MCP app. No tools, no OFJ API calls from ChatGPT.
 - Not a Custom GPT listing in the GPT store (different product).
-- ChatGPT will not fetch OFJ listings unless the user (or browsing) opens the URL.
+- Job links are OFJ hubs or `/jobs/{slug}` pages. Never Greenhouse / Lever / company careers.
+- If browsing or a public jobs tool is available, use those OFJ URLs as returned.
 
 ## Test prompts
 

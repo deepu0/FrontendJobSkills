@@ -19,4 +19,4 @@ zip -r "$out" \
   -x 'skills/*/.DS_Store' -x 'assets/.DS_Store'
 
 echo "Wrote $out"
-unzip -l "$out" | head -40
+unzip -Z1 "$out" | sed -n '1,40p'

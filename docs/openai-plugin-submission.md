@@ -29,8 +29,8 @@ If the portal says you lack Apps Management or identity, stop. That is an org se
 | Field | Value |
 |---|---|
 | Plugin name | Frontend Job Skills |
-| Short description | Score and tailor frontend resumes, then open live OnlyFrontendJobs pages. |
-| Long description | Helps frontend developers score a resume with the OnlyFrontendJobs v1.1.0 rubric, judge a JD, tailor bullets without inventing stack, rewrite LinkedIn, and estimate pay from the OFJ 2025–26 ladder. Every workflow ends with a real OFJ URL. It does not scrape jobs or call a job API. |
+| Short description | Score and tailor frontend resumes, judge JDs, and open live OnlyFrontendJobs listings. |
+| Long description | Eleven workflows for frontend developers job hunting: resume score (OFJ v1.1.0 rubric), apply-or-skip JD analysis, tailoring without invented stack, LinkedIn, portfolio/GitHub review, interview prep, salary estimate (2025–26 ladder), and remote search strategy. Job links stay on onlyfrontendjobs.com. No plugin login. Live job cards when the public API is available; v1.1.0 is skills-only. |
 | Developer identity | Your verified individual or OnlyFrontendJobs business identity |
 | Category | Productivity |
 | Website | https://onlyfrontendjobs.com |
@@ -78,7 +78,7 @@ Only add countries where you will support users at hello@onlyfrontendjobs.com.
 
 ## Submit tab — release notes
 
-Initial skills-only submission. Packages 11 frontend job-search skills aligned with OnlyFrontendJobs resume rubric v1.1.0 and the 2025–26 salary ladder. No MCP server. No job API. Local Codex install verified as `frontend-job-skills@personal` 1.1.0.
+Initial skills-only submission. Packages 11 frontend job-search skills aligned with OnlyFrontendJobs resume rubric v1.1.0 and the 2025–26 salary ladder. Skills-first. Job links stay on onlyfrontendjobs.com. Local Codex install verified as `frontend-job-skills@personal` 1.1.0.
 
 ## After OpenAI approves
 
@@ -86,4 +86,4 @@ You still have to **publish** from the portal. Submit ≠ live in the public dir
 
 ## Do not add MCP yet
 
-MCP is only worth it when OFJ has a public, allowlisted jobs/score API. Until then, skills-only is the official shape that matches what we ship.
+A public, allowlisted jobs API can return OFJ job cards. Do not submit **With MCP** until that production URL is live and inspector-green. Career URLs must never appear in tool output.

@@ -39,6 +39,7 @@ Put extra material in `references/` inside that skill. After you change root `re
 
 - Invent LCP, salary percentiles, or "12 matching live jobs"
 - Link `/remote-javascript-jobs` or `/entry-level-remote-frontend-jobs` (those 404)
+- Output Greenhouse, Lever, Ashby, Workday, Indeed, or company `/careers` URLs
 - Claim the local score is the official OFJ scan
 - Add backend/PM/data-science skills
 
@@ -47,5 +48,6 @@ Put extra material in `references/` inside that skill. After you change root `re
 1. Fork and branch
 2. Edit `skills/<name>/` (source of truth)
 3. Run `./scripts/sync-agent-copies.sh`
-4. Run `./scripts/verify-ofj-links.sh`
-5. PR says what changed and why
+4. Run `./scripts/release-check.sh`
+5. Run `./scripts/verify-ofj-links.sh` when network access is available
+6. PR says what changed and why
