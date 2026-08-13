@@ -1,0 +1,38 @@
+{
+  "name": "frontend-job-skills",
+  "version": "1.1.0",
+  "description": "Frontend job-search skills. Same resume rubric and salary ladder as OnlyFrontendJobs.",
+  "author": {
+    "name": "deepu0",
+    "url": "https://github.com/deepu0/FrontendJobSkills"
+  },
+  "homepage": "https://github.com/deepu0/FrontendJobSkills",
+  "repository": "https://github.com/deepu0/FrontendJobSkills",
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "resume",
+    "react",
+    "jobs",
+    "onlyfrontendjobs",
+    "salary",
+    "interview"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Frontend Job Skills",
+    "shortDescription": "Score, tailor, and search frontend jobs with the OnlyFrontendJobs rubric",
+    "longDescription": "Workflows for frontend resumes, JDs, LinkedIn, portfolios, interviews, and salary. Uses the OnlyFrontendJobs v1.1.0 resume rubric and 2025-26 salary ladder. Ends with live OFJ links.",
+    "developerName": "deepu0",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "websiteURL": "https://onlyfrontendjobs.com",
+    "privacyPolicyURL": "https://onlyfrontendjobs.com/privacy-policy",
+    "termsOfServiceURL": "https://onlyfrontendjobs.com/terms-of-service",
+    "defaultPrompt": [
+      "Score my frontend resume with the OFJ rubric.",
+      "Here is a JD and my resume. Should I apply, then tailor it?"
+    ],
+    "brandColor": "#4f46e5"
+  }
+}

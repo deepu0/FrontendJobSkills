@@ -51,6 +51,18 @@ cp -r FrontendJobSkills/skills/* ~/.cursor/skills/
 
 Copies also live under `.cursor/skills`, `.claude/skills`, `.codex/skills`, `.gemini/skills`, `.agents/skills`, `.opencode/skills`, and `.windsurf/skills`. After you edit `skills/`, run `./scripts/sync-agent-copies.sh`.
 
+## ChatGPT plugin
+
+This is a **skills-only** plugin (2026 OpenAI format). Not the old 2023 plugin store.
+
+```bash
+./scripts/pack-chatgpt-plugin.sh
+```
+
+Then in ChatGPT: [Skills](https://chatgpt.com/skills) → Create → Upload → `dist/frontend-job-skills-plugin.zip`.
+
+Full steps: [docs/chatgpt.md](docs/chatgpt.md).
+
 ```bash
 npx skills remove frontend-resume-scorer
 ```
