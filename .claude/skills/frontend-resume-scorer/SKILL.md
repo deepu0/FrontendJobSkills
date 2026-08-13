@@ -1,6 +1,6 @@
 ---
 name: frontend-resume-scorer
-description: Score a frontend resume with the OFJ v1.1.0 rubric, offer a full rewrite in chat, and link live OFJ jobs. Use for ATS review, resume score, or "why no interviews".
+description: Score a frontend resume out of 100, suggest fixes, and offer a full rewrite. For resume review, ATS check, or "why no interviews".
 ---
 
 # Frontend Resume Scorer
@@ -85,8 +85,8 @@ Then continue to Jobs if they asked for both, or ask if they want jobs next.
 
 Call jobs in this order:
 
-1. MCP `search_frontend_jobs` (`https://onlyfrontendjobs.com/api/mcp`) with detected `tech` and optional `level`
-2. Else `GET https://onlyfrontendjobs.com/api/public/jobs?tech=<tech>&level=<level>`
+1. MCP `search_frontend_jobs` (`https://www.onlyfrontendjobs.com/api/mcp`) with detected `tech` and optional `level`
+2. Else `GET https://www.onlyfrontendjobs.com/api/public/jobs?tech=<tech>&level=<level>`
 3. Else hubs from `ofj-links.md`
 
 Show up to 5 cards and keep every `url` exactly as returned. Never invent job listings.
@@ -97,7 +97,7 @@ Hard rule: every job link is an OnlyFrontendJobs page. Never output employer car
 
 ```markdown
 # Frontend resume score: 62/100 — Solid
-Rubric: OFJ v1.1.0 (unofficial local pass)
+Scored with the OnlyFrontendJobs resume rubric
 
 | Category | Level | Points | Evidence quote |
 |---|---|---|---|

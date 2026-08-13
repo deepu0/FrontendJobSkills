@@ -50,6 +50,27 @@
 
 [1.2.0]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.0
 
+## [1.2.2] — 2026-08-13
+
+### Changed
+
+- `PLUGIN.md` — greeting, skill routing, instant jobs UX (no tool narration)
+- `remote-job-strategy` — split **instant listings** vs **weekly plan** modes
+- API calls documented with `www.onlyfrontendjobs.com` (avoid 308 redirects)
+- `docs/codex-local.md` — enable bundled MCP after install
+
+[1.2.2]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.2
+
+## [1.2.3] — 2026-08-13
+
+### Changed
+
+- Copy pass: removed internal jargon from user-facing README, plugin listing, starter prompts, and skill descriptions
+- Namaskaram greeting + onboarding flow in `PLUGIN.md`
+- Shorter default prompts on the directory card
+
+[1.2.3]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.3
+
 ## [1.2.1] — 2026-08-13
 
 ### Changed

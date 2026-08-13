@@ -1,7 +1,7 @@
 {
   "name": "onlyfrontendjobsskills",
-  "version": "1.2.1",
-  "description": "Frontend job-search skills for Claude Code: OFJ resume rubric, JD analysis, tailoring, and live job links.",
+  "version": "1.2.3",
+  "description": "OnlyFrontendJobs Skills — resume scoring, job-fit checks, tailoring, and live frontend listings.",
   "author": "deepu0",
   "license": "MIT",
   "repository": {
@@ -12,13 +12,13 @@
     {
       "name": "frontend-resume-scorer",
       "path": "skills/frontend-resume-scorer/SKILL.md",
-      "description": "Score a frontend resume with OFJ rubric v1.1.0, ATS checks, full rewrite",
+      "description": "Score a frontend resume out of 100, ATS checks, full rewrite",
       "triggers": ["score my resume", "ATS", "resume review", "fix my resume", "not getting interviews", "frontend resume"]
     },
     {
       "name": "salary-calculator",
       "path": "skills/salary-calculator/SKILL.md",
-      "description": "Estimate frontend pay with the OFJ 2025-26 ladder",
+      "description": "Estimate frontend pay with OnlyFrontendJobs salary data",
       "triggers": ["salary", "what should I ask", "underpaid", "negotiation"]
     },
     {
@@ -30,13 +30,13 @@
     {
       "name": "frontend-resume-tailor",
       "path": "skills/frontend-resume-tailor/SKILL.md",
-      "description": "Tailor a frontend resume to one JD without inventing stack",
+      "description": "Tailor a resume to one job posting — only real experience",
       "triggers": ["tailor resume", "customize resume", "match this job", "optimize for this role", "resume for this JD"]
     },
     {
       "name": "frontend-bullet-writer",
       "path": "skills/frontend-bullet-writer/SKILL.md",
-      "description": "Rewrite frontend bullets or a full resume without inventing metrics",
+      "description": "Rewrite resume bullets with clear impact",
       "triggers": ["rewrite bullets", "improve my bullets", "resume bullets"]
     },
     {
@@ -72,7 +72,7 @@
     {
       "name": "remote-job-strategy",
       "path": "skills/remote-job-strategy/SKILL.md",
-      "description": "Plan a remote frontend search with OFJ as the board",
+      "description": "Find live jobs or plan a focused remote search",
       "triggers": ["remote job search", "find remote frontend jobs", "job search plan"]
     }
   ]

@@ -1,6 +1,6 @@
 ---
 name: salary-calculator
-description: Estimate frontend pay with the OnlyFrontendJobs 2025-26 ladder, then send them to the official calculator.
+description: Estimate fair pay for a frontend role using OnlyFrontendJobs salary data, then link the official calculator.
 ---
 
 # Frontend Salary Calculator

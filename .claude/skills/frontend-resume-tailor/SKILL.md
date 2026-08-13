@@ -1,6 +1,6 @@
 ---
 name: frontend-resume-tailor
-description: Tailor a frontend resume to one JD. Reorder true experience, match keywords, no invented stack. Use after job-analyzer or when user says "customize for this role".
+description: Customize a resume for one job posting using only experience the candidate actually has.
 ---
 
 # Frontend Resume Tailor

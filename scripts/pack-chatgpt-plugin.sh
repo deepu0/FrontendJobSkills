@@ -16,6 +16,7 @@ zip -r "$out" \
   references \
   LICENSE \
   README.md \
+  PLUGIN.md \
   assets \
   -x 'skills/*/.DS_Store' -x 'assets/.DS_Store'
 

@@ -1,6 +1,6 @@
 ---
 name: frontend-bullet-writer
-description: Rewrite weak frontend bullets or a full resume. Technical action plus a real metric. Never invent numbers.
+description: Turn weak resume bullets into clear impact lines. Ask for metrics instead of making them up.
 ---
 
 # Frontend Bullet Writer

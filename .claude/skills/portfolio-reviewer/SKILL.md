@@ -1,6 +1,6 @@
 ---
 name: portfolio-reviewer
-description: Review a frontend portfolio or repo like a hiring manager. Fetch the URL first. Do not invent load times.
+description: Review a portfolio or GitHub repo the way a hiring manager would. Fetch the URL before judging.
 ---
 
 # Portfolio Reviewer

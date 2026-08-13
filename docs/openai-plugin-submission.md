@@ -2,20 +2,20 @@
 
 Source: [Submit plugins](https://developers.openai.com/plugins/deploy/submission).
 
-## v1.2.1 — With MCP (current)
+## v1.2.2 — With MCP (current)
 
 Production MCP is live and inspector-green:
 
 - **Plugin name:** OnlyFrontendJobs Skills
 - **Slug:** `onlyfrontendjobsskills`
-- **Endpoint:** `https://onlyfrontendjobs.com/api/mcp`
+- **Endpoint:** `https://www.onlyfrontendjobs.com/api/mcp`
 - **Tool:** `search_frontend_jobs` (max 5 portal job cards, no login)
 
 ### You click this
 
 1. Sign in at https://platform.openai.com/plugins
 2. **Create plugin** (or update existing draft) → **With MCP**
-3. Enter MCP URL: `https://onlyfrontendjobs.com/api/mcp`
+3. Enter MCP URL: `https://www.onlyfrontendjobs.com/api/mcp`
 4. Upload `dist/onlyfrontendjobsskills-plugin.zip` (`./scripts/pack-chatgpt-plugin.sh`) — includes skills + `.mcp.json`
 5. Paste the Info / Testing fields below
 6. **Scan Tools** in the portal to import skills from MCP if offered
@@ -26,10 +26,10 @@ Production MCP is live and inspector-green:
 | Field | Value |
 |---|---|
 | **Name** | OnlyFrontendJobs Skills |
-| **Version** | 1.2.1 |
-| **Subtitle** (≤30 chars) | OnlyFrontendJobs job search |
-| **Description** | Score and tailor frontend developer resumes, judge whether a job description is a good fit, estimate salary, prep interviews, and return up to five live frontend job listings from OnlyFrontendJobs. Built for React, TypeScript, and remote job search. No login required in the plugin. Every job link stays on onlyfrontendjobs.com. |
-| **MCP server URL** | `https://onlyfrontendjobs.com/api/mcp` |
+| **Version** | 1.2.3 |
+| **Subtitle** (≤30 chars) | Find & tailor frontend jobs |
+| **Description** | Your frontend job-search copilot on OnlyFrontendJobs. Score and rewrite your resume, decide whether a role is worth applying to, tailor bullets to a job description, prep for interviews, estimate salary, and browse fresh React and TypeScript listings. Built for remote and hybrid frontend developers. |
+| **MCP server URL** | `https://www.onlyfrontendjobs.com/api/mcp` |
 | **Category** | Productivity |
 | **Website** | https://onlyfrontendjobs.com |
 | **Support** | https://github.com/deepu0/FrontendJobSkills/issues |
@@ -41,11 +41,11 @@ Production MCP is live and inspector-green:
 
 ### Starter prompts
 
-1. Score my frontend resume with the OFJ rubric.
-2. Here is a JD and my resume. Should I apply, then tailor it?
-3. What salary should a mid React engineer in Bengaluru ask for?
-4. Fix my LinkedIn headline for remote frontend roles.
-5. Find React frontend jobs posted this week.
+1. Find React jobs posted this week
+2. Score my frontend resume and suggest improvements
+3. Here is a JD and my resume — should I apply?
+4. What salary should a mid React engineer in Bengaluru ask for?
+5. Fix my LinkedIn headline for remote frontend roles
 
 ### Testing tab
 
@@ -53,12 +53,12 @@ Production MCP is live and inspector-green:
 
 | # | User prompt | Expected |
 |---|---|---|
-| 1 | Score this frontend resume: [paste] | Uses `frontend-resume-scorer`. OFJ v1.1.0 categories, ATS checks, quotes, then `/resume-score`. |
-| 2 | Should I apply to this React job? [JD] [resume] | Uses `frontend-job-analyzer`. Match + red flags. Real OFJ hub, not a 404 slug. |
-| 3 | Tailor my resume to this JD. [JD] [resume] | Uses `frontend-resume-tailor`. Reorders true experience. Does not add Next.js unless quoted. |
-| 4 | What should I ask as a mid React dev in Bengaluru? | Uses `salary-calculator`. OFJ ladder in LPA. Sends to `/salary-calculator`. |
-| 5 | Review https://… my portfolio | Uses `portfolio-reviewer`. Fetches or admits it did not. No invented LCP. |
-| 6 | Find React frontend jobs posted this week | Calls `search_frontend_jobs` with `tech: react`, `posted_within_days: 7`. Returns ≤5 cards with `onlyfrontendjobs.com/jobs/` URLs and `utm_medium=mcp`. |
+| 1 | Score this frontend resume: [paste] | Resume score /100, category breakdown, ATS checks, rewrite offer, link to official resume scorer |
+| 2 | Should I apply to this React job? [JD] [resume] | Match %, red flags, apply/tailor/skip, similar live roles |
+| 3 | Tailor my resume to this JD. [JD] [resume] | Reorders real experience only — no invented stack |
+| 4 | What should I ask as a mid React dev in Bengaluru? | Salary range in LPA, link to salary calculator |
+| 5 | Review https://… my portfolio | Honest portfolio feedback — admits if URL could not be fetched |
+| 6 | Find React frontend jobs posted this week | Up to 5 live OnlyFrontendJobs job cards with apply links |
 
 **Negative (3)**
 
@@ -74,7 +74,7 @@ Start with: India, United States, United Kingdom, Germany, Canada, Singapore.
 
 ### Submit tab — release notes
 
-v1.2.1 renames the plugin to OnlyFrontendJobs Skills, adds new plugin icons, and ships live job search via MCP `search_frontend_jobs`. No login. Portal-only job URLs.
+v1.2.2 improves listing copy and conversation UX. Live job search via OnlyFrontendJobs. Score resumes, judge job posts, tailor applications.
 
 ## After OpenAI approves
 

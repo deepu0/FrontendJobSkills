@@ -1,5 +1,8 @@
 {
   "name": "onlyfrontendjobsskills-repo",
+  "interface": {
+    "displayName": "OnlyFrontendJobs Skills"
+  },
   "plugins": [
     {
       "name": "onlyfrontendjobsskills",
@@ -10,9 +13,6 @@
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
-      },
-      "interface": {
-        "displayName": "OnlyFrontendJobs Skills"
       },
       "category": "Productivity"
     }

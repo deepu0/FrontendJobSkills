@@ -1,6 +1,8 @@
 {
-  "onlyfrontendjobs": {
-    "type": "http",
-    "url": "https://onlyfrontendjobs.com/api/mcp"
+  "mcpServers": {
+    "onlyfrontendjobs": {
+      "type": "http",
+      "url": "https://www.onlyfrontendjobs.com/api/mcp"
+    }
   }
 }
