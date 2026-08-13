@@ -1,6 +1,6 @@
 ---
 name: remote-job-strategy
-description: Find live frontend jobs on OnlyFrontendJobs or build a remote search plan. Use for "give me jobs", "find React jobs", "frontend jobs this week", or weekly search strategy.
+description: Find live frontend jobs on OnlyFrontendJobs (ask stack, level, and location first) or build a remote search plan.
 ---
 
 # Remote Job Strategy
@@ -11,18 +11,38 @@ Read [references/ofj-links.md](references/ofj-links.md). Plugin voice: [PLUGIN.m
 
 ## Mode A — Instant listings (default)
 
-**Triggers:** "give me jobs", "find frontend jobs", "React jobs", "jobs this week", "what's hiring", "show listings" — and they did **not** ask for a plan or strategy.
+**Triggers:** "give me jobs", "find frontend jobs", "React jobs", "jobs this week", "what's hiring", "show listings".
 
-**Do this:**
+**Do not dump jobs first.** Follow [PLUGIN.md](../../PLUGIN.md) **discover before dump**.
 
-1. Fetch live jobs **immediately** (no preamble about reading files or MCP availability).
-2. Data source order:
-   - MCP `search_frontend_jobs` at `https://www.onlyfrontendjobs.com/api/mcp`
-   - Else `GET https://www.onlyfrontendjobs.com/api/public/jobs?tech=<tech>&level=<level>&posted_within_days=<days>`
-3. Defaults: `tech=react`, `posted_within_days=7`. Parse stack/level from the user message when obvious.
-4. Reply with the card list format from PLUGIN.md. Max 5 jobs from the API.
-5. One follow-up: filter by level/stack, or score resume against a pick?
-6. **Do not** output the weekly plan table or funnel lecture in this mode.
+### Step 1 — Profile check
+
+Before any API call, ensure you know (from this message or earlier in the thread):
+
+- target **seniority** (or years → infer junior / mid / senior / staff)
+- main **stack** → API `tech` (`react`, `nextjs`, `typescript`, etc.)
+- **location** or remote preference
+
+If anything important is missing, ask once (see PLUGIN.md discovery prompt). Max two rounds.
+
+### Step 2 — Mirror + fetch
+
+Confirm in one line, then fetch:
+
+- MCP `search_frontend_jobs` at `https://www.onlyfrontendjobs.com/api/mcp`
+- Else `GET https://www.onlyfrontendjobs.com/api/public/jobs?tech=<tech>&level=<level>&posted_within_days=<days>`
+
+Defaults only when user did not specify: `tech=react`, `posted_within_days=7`, `level` from their seniority.
+
+### Step 3 — Rich cards
+
+Use PLUGIN.md card format. No naked UTM strings in visible text. Max 5 jobs.
+
+### Step 4 — Follow-up
+
+Offer: refine filters, score resume against a role, or analyze one JD.
+
+**Do not** output the weekly plan table in this mode.
 
 ## Mode B — Weekly search plan
 

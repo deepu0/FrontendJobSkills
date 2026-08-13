@@ -71,6 +71,16 @@
 
 [1.2.3]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.3
 
+## [1.2.4] — 2026-08-13
+
+### Changed
+
+- `PLUGIN.md` — discover before dumping jobs (experience, stack, location); thread profile memory
+- Rich job cards — no visible UTM strings; bare URL per job for ChatGPT OG unfurl
+- `remote-job-strategy` — ask profile gaps first, then fetch with matched `tech` / `level`
+
+[1.2.4]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.4
+
 ## [1.2.1] — 2026-08-13
 
 ### Changed
