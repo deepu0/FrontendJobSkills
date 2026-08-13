@@ -1,5 +1,10 @@
 # Roadmap
 
+## Shipped — v1.2.0
+
+- Public jobs MCP live on OnlyFrontendJobs (`/api/mcp`, `/api/public/jobs`)
+- Plugin manifest declares MCP via `.mcp.json` → `search_frontend_jobs`
+
 ## Shipped — v1.1.2
 
 - Deepened 3 core skills: `frontend-resume-scorer`, `frontend-job-analyzer`, `frontend-resume-tailor` (triggers, before/after, edge cases)
@@ -13,12 +18,9 @@
 - Offline `release-check.sh` + pack tests
 - Skills call public jobs API when available (REST fallback)
 
-## Next — v1.2.0 (after fejobs MCP is live in prod)
+## Next
 
-- [ ] Merge & deploy [fejobs PR #261](https://github.com/deepu0/fejobs/pull/261) (`/api/mcp`, `/api/public/jobs`)
-- [ ] Inspector green on `https://onlyfrontendjobs.com/api/mcp`
-- [ ] Bump plugin manifest → add MCP URL (`dependencies.tools`)
-- [ ] Submit ChatGPT plugin update (With MCP)
+- [ ] Submit ChatGPT plugin update (**With MCP**) — see `docs/openai-plugin-submission.md`
 
 ## Later (only if used)
 

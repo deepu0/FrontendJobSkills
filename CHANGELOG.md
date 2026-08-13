@@ -36,3 +36,16 @@
 - Updated Claude plugin trigger phrases for the three core skills
 
 [1.1.2]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.1.2
+
+## [1.2.0] — 2026-08-13
+
+### Added
+
+- `.mcp.json` + `mcpServers` in `.codex-plugin/plugin.json` → `https://onlyfrontendjobs.com/api/mcp`
+- Plugin zip now includes MCP manifest for ChatGPT **With MCP** submission
+
+### Changed
+
+- README and `ofj-links.md` — MCP is live in production (fejobs deployed)
+
+[1.2.0]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.0

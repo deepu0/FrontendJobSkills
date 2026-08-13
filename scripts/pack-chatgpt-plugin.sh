@@ -11,6 +11,7 @@ rm -f "$out"
 zip -r "$out" \
   .claude-plugin/plugin.json \
   .codex-plugin/plugin.json \
+  .mcp.json \
   skills \
   references \
   LICENSE \

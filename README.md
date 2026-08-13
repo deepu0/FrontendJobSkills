@@ -13,7 +13,7 @@ Inspired by [ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills) — s
 | | |
 |---|---|
 | **For** | Frontend / React / TypeScript developers searching remote roles |
-| **Format** | 11 `SKILL.md` workflows + a packable ChatGPT plugin (`v1.1.0`) |
+| **Format** | 11 `SKILL.md` workflows + ChatGPT plugin with live jobs MCP (`v1.2.0`) |
 | **Brain** | Your AI agent (skills teach it *how* to help) |
 | **Data** | [OnlyFrontendJobs](https://onlyfrontendjobs.com) — rubric, salary ladder, job listings |
 | **Login** | None required in the plugin. Official resume scan on OFJ may ask for account. |
@@ -38,12 +38,12 @@ Every job link stays on `onlyfrontendjobs.com`. Apply happens on the OFJ job pag
 ```
 You → AI agent (skills) → advice + rewritten text in chat
                       → OnlyFrontendJobs URLs (hubs, /jobs/{slug}, tools)
-                      → optional: GET /api/public/jobs or MCP search_frontend_jobs (v1.2+)
+                      → MCP `search_frontend_jobs` + GET /api/public/jobs fallback
 ```
 
 **Skills** = markdown playbooks the model reads when your prompt matches.  
 **Plugin** = same skills zipped for ChatGPT upload or Codex marketplace.  
-**Live jobs** = served by the [fejobs](https://github.com/deepu0/fejobs) app (public API; MCP tool in plugin v1.2 after prod deploy).
+**Live jobs** = [fejobs](https://github.com/deepu0/fejobs) public MCP + REST API on OnlyFrontendJobs.
 
 ## Skills by category
 
@@ -155,9 +155,9 @@ Agent:
 
 ## Live job cards
 
-When the OnlyFrontendJobs public API is deployed, skills try in order:
+Skills try in order:
 
-1. MCP `search_frontend_jobs` (ChatGPT plugin **v1.2** — after MCP URL is in manifest)
+1. MCP `search_frontend_jobs` at `https://onlyfrontendjobs.com/api/mcp` (plugin **v1.2.0**)
 2. `GET https://onlyfrontendjobs.com/api/public/jobs?tech=react`
 3. Verified category hubs in [references/ofj-links.md](references/ofj-links.md)
 
@@ -169,7 +169,7 @@ Resume scoring follows OFJ `resume-rubric.ts` + `ats-checker.ts` (v1.1.0). Salar
 
 ## Roadmap
 
-See [ROADMAP.md](ROADMAP.md). **v1.1.0** = skills + plugin pack. **v1.2.0** = ChatGPT manifest with MCP after prod is green.
+See [ROADMAP.md](ROADMAP.md). **v1.2.0** = live jobs MCP in the ChatGPT plugin manifest.
 
 ## Contributing
 

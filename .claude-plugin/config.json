@@ -1,6 +1,6 @@
 {
   "name": "frontend-job-skills",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Frontend job-search skills for Claude Code: OFJ resume rubric, JD analysis, tailoring, and live job links.",
   "author": "deepu0",
   "license": "MIT",

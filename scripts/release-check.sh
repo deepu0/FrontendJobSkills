@@ -34,6 +34,8 @@ unzip -t "$archive" >/dev/null
 entries="$(unzip -Z1 "$archive")"
 test "$(grep -Ec '^skills/[^/]+/SKILL\.md$' <<<"$entries")" = 11
 grep -qx '.claude-plugin/plugin.json' <<<"$entries"
+grep -qx '.mcp.json' <<<"$entries"
+python3 -c 'import json; m=json.load(open(".codex-plugin/plugin.json")); assert "mcpServers" in m, "codex plugin must declare mcpServers"'
 if grep -Eq '^(\.agents/|\.claude/|\.codex/|\.cursor/|dist/|tests/)' <<<"$entries"; then
   echo "Release archive contains development-only files." >&2
   exit 1

@@ -1,0 +1,6 @@
+{
+  "onlyfrontendjobs": {
+    "type": "http",
+    "url": "https://onlyfrontendjobs.com/api/mcp"
+  }
+}

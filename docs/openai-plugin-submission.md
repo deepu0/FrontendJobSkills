@@ -2,7 +2,57 @@
 
 Source: [Submit plugins](https://developers.openai.com/plugins/deploy/submission).
 
-This repo is a **skills-only** plugin. Do **not** pick **With MCP**. We have no public MCP server. The [quickstart](https://developers.openai.com/plugins/quickstart) is MCP-first; skip it.
+## v1.2.0 — With MCP (current)
+
+Production MCP is live and inspector-green:
+
+- **Endpoint:** `https://onlyfrontendjobs.com/api/mcp`
+- **Tool:** `search_frontend_jobs` (max 5 portal job cards, no login)
+
+### You click this
+
+1. Sign in at https://platform.openai.com/plugins
+2. **Create plugin** (or update existing draft) → **With MCP**
+3. Enter MCP URL: `https://onlyfrontendjobs.com/api/mcp`
+4. Upload `dist/frontend-job-skills-plugin.zip` (`./scripts/pack-chatgpt-plugin.sh`) — includes skills + `.mcp.json`
+5. Paste the Info / Testing fields below (updated for live jobs)
+6. **Scan Tools** in the portal to import skills from MCP if offered
+7. **Submit for Review**
+
+### Info tab (paste)
+
+| Field | Value |
+|---|---|
+| Plugin name | Frontend Job Skills |
+| Short description | Score and tailor frontend resumes, judge JDs, and return live OnlyFrontendJobs job cards. |
+| Long description | Eleven workflows for frontend developers job hunting: resume score (OFJ v1.1.0 rubric), apply-or-skip JD analysis, tailoring without invented stack, LinkedIn, portfolio/GitHub review, interview prep, salary estimate (2025–26 ladder), and remote search strategy. MCP `search_frontend_jobs` returns up to 5 live OFJ listings. Job links stay on onlyfrontendjobs.com. No plugin login. |
+| MCP server URL | `https://onlyfrontendjobs.com/api/mcp` |
+| Developer identity | Your verified individual or OnlyFrontendJobs business identity |
+| Category | Productivity |
+| Website | https://onlyfrontendjobs.com |
+| Support | https://github.com/deepu0/FrontendJobSkills/issues |
+| Privacy | https://onlyfrontendjobs.com/privacy-policy |
+| Terms | https://onlyfrontendjobs.com/terms-of-service |
+| Logo | `assets/logo.svg` (export 1024×1024 PNG if the form rejects SVG) |
+| Contact | hello@onlyfrontendjobs.com |
+
+### Testing tab — add MCP positive case
+
+| # | User prompt | Expected |
+|---|---|---|
+| 6 | Find React frontend jobs posted this week | Calls `search_frontend_jobs` with `tech: react`, `posted_within_days: 7`. Returns ≤5 cards with `onlyfrontendjobs.com/jobs/` URLs and `utm_medium=mcp`. |
+
+### Submit tab — release notes
+
+v1.2.0 adds live job search via MCP `search_frontend_jobs` on OnlyFrontendJobs. Skills unchanged from v1.1.2. No login. Portal-only job URLs.
+
+---
+
+## v1.1.0 — Skills only (superseded)
+
+The first submission path was skills-only. Use **With MCP** for v1.2.0+.
+
+This repo shipped as a **skills-only** plugin initially. Do **not** pick **With MCP** until production MCP is green.
 
 ## What I cannot do from this machine
 
@@ -86,4 +136,6 @@ You still have to **publish** from the portal. Submit ≠ live in the public dir
 
 ## Do not add MCP yet
 
-A public, allowlisted jobs API can return OFJ job cards. Do not submit **With MCP** until that production URL is live and inspector-green. Career URLs must never appear in tool output.
+~~A public, allowlisted jobs API can return OFJ job cards. Do not submit **With MCP** until that production URL is live and inspector-green. Career URLs must never appear in tool output.~~
+
+**v1.2.0:** MCP is live. Submit **With MCP** using the section at the top of this doc.
