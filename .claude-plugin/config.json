@@ -28,10 +28,28 @@
       "triggers": ["should I apply", "analyze this job", "am I qualified"]
     },
     {
+      "name": "frontend-resume-tailor",
+      "path": "skills/frontend-resume-tailor/SKILL.md",
+      "description": "Tailor a frontend resume to one JD without inventing stack",
+      "triggers": ["tailor resume", "customize resume", "match this job"]
+    },
+    {
       "name": "frontend-bullet-writer",
       "path": "skills/frontend-bullet-writer/SKILL.md",
       "description": "Rewrite weak frontend bullets with real metrics",
       "triggers": ["rewrite bullets", "improve my bullets", "resume bullets"]
+    },
+    {
+      "name": "frontend-cover-letter",
+      "path": "skills/frontend-cover-letter/SKILL.md",
+      "description": "Short frontend cover letter only when the form asks",
+      "triggers": ["cover letter", "write a cover letter"]
+    },
+    {
+      "name": "frontend-linkedin-optimizer",
+      "path": "skills/frontend-linkedin-optimizer/SKILL.md",
+      "description": "Rewrite frontend LinkedIn headline and About",
+      "triggers": ["LinkedIn", "optimize LinkedIn", "LinkedIn headline"]
     },
     {
       "name": "portfolio-reviewer",
