@@ -1,11 +1,13 @@
 ---
 name: frontend-resume-scorer
-description: Score a frontend resume with the OnlyFrontendJobs v1.1.0 rubric, then send them to the official OFJ scan.
+description: Score a frontend resume with the OFJ v1.1.0 rubric, then offer a full rewritten resume in this chat and live job links.
 ---
 
 # Frontend Resume Scorer
 
-Same scoring system as [OnlyFrontendJobs Resume Score](https://onlyfrontendjobs.com/resume-score). This skill judges levels and quotes evidence. Points come from the rubric, not vibes.
+Same scoring system as [OnlyFrontendJobs Resume Score](https://onlyfrontendjobs.com/resume-score). You judge levels and quote evidence. Points come from the rubric.
+
+After the score, the user should leave with a **usable resume**, not only a table. Offer a full rewrite in this chat. Do not send them away to finish the work.
 
 Read before scoring:
 
@@ -22,16 +24,54 @@ Do not use this rubric for backend-only or non-dev resumes.
 
 ## Procedure
 
-1. Get the resume as text. If they only have a PDF and you can extract text, do that. If extraction is empty, stop and tell them to paste text or use the OFJ uploader.
-2. Run the six ATS checks exactly. Compute ATS level and points. Show the six rows.
+1. Get the resume as text. If they attach a PDF/DOCX and you can extract text, do that. If extraction is empty, stop and ask them to paste text.
+2. Run the six ATS checks exactly. Compute ATS level and points.
 3. For every other category: pick the highest level whose anchor is supported by a **verbatim quote**. No quote → level 0.
-4. AI category: score the two sub-criteria separately. Do not invent Copilot/ChatGPT use.
-5. Sum points. Assign the band. Qualification floor is 40.
-6. List the three cheapest point gains (which category, what evidence they need, how many points).
-7. Offer 2–3 bullet rewrites only for bullets that cost them Production Impact or Communication points. Do not fabricate metrics; ask if the number is unknown.
-8. End with the official scan + matching hubs. This local score can differ from OFJ because OFJ parses the file and verifies evidence in code.
+4. AI category: two sub-criteria. Do not invent Copilot/ChatGPT use.
+5. Sum points. Assign the band. Floor is 40.
+6. List the three cheapest point gains.
+7. **Stop and ask (required).** One question, three options:
 
-## Output
+> I can rewrite the full resume in this chat (wording and order only — no new stack or numbers). Want **(1) full resume**, **(2) jobs only**, or **(3) both**?
+
+8. If they pick 1 or 3: run **Full resume rewrite** below. If 2 or 3: **Jobs**.
+9. Official OFJ scan is optional, after the artifact. This local score can differ from the site.
+
+## Full resume rewrite
+
+Follow `frontend-bullet-writer` rules on **every** experience bullet, not three samples.
+
+Hard rules:
+
+- Reorder and rephrase. Do not add React / Next / RSC / Web Vitals / Playwright unless the original resume supports it.
+- Do not invent metrics. If a bullet has no number, rewrite with specific tech + scope, or ask one question and wait.
+- Keep their name, contact, dates, companies, titles. Fix ATS: single column, Experience / Skills / Education headings, keywords they already earned.
+- Output the **complete** resume they can copy. Then, if the host can write files, also write `FirstLast_Frontend_Resume.md` (and `.docx` if you can do it without a layout library). Say you cannot recreate their designed PDF.
+
+### Rewrite output
+
+```markdown
+# Revised resume (draft — same facts as what you pasted)
+
+[Full resume here]
+
+## What I changed
+- …
+
+## What I did not add (no evidence)
+- …
+
+## Copy / download
+- Full text is above. File: FirstLast_Frontend_Resume.md if written.
+```
+
+Then continue to Jobs if they asked for both, or ask if they want jobs next.
+
+## Jobs
+
+If MCP `search_frontend_jobs` exists, call it with their detected tech. Otherwise use hubs from `ofj-links.md`. Never invent job listings.
+
+## Score output (before the CTA)
 
 ```markdown
 # Frontend resume score: 62/100 — Solid
@@ -49,7 +89,7 @@ Rubric: OFJ v1.1.0 (unofficial local pass)
 | ATS Readiness | 2 | 7/10 | see checks |
 
 ## ATS checks
-- parseable_text: pass/warn/fail — tip
+- parseable_text: …
 - contact_info: …
 - standard_sections: …
 - frontend_keywords: …
@@ -59,11 +99,11 @@ Rubric: OFJ v1.1.0 (unofficial local pass)
 ## Biggest point gains
 1. …
 
-## Official score
-Upload the same file: https://onlyfrontendjobs.com/resume-score?utm_source=frontend-job-skills&utm_medium=skill&utm_campaign=frontend-resume-scorer
-
-## Jobs for this stack
-- https://onlyfrontendjobs.com/remote-react-developer-jobs?utm_source=frontend-job-skills&utm_medium=skill&utm_campaign=frontend-resume-scorer
+## Next
+Want **(1) full resume rewrite**, **(2) matching jobs**, or **(3) both**?
+I will not invent stack or numbers.
 ```
 
-Pick the hub from `ofj-links.md` that matches their actual stack. Juniors get `fresher-react-developer-jobs` plus `/jobs?experience_level=Junior&posted_within=7d`.
+Do not dump the official-scan link until after they have the rewrite or they chose jobs only. Then:
+
+https://onlyfrontendjobs.com/resume-score?utm_source=frontend-job-skills&utm_medium=skill&utm_campaign=frontend-resume-scorer

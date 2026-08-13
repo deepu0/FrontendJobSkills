@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SKIP = {".freebuff", ".git"}
+SKIP = {".freebuff", ".git", ".hermes", "dist"}
 URL_RE = re.compile(r"https://(?:www\.)?onlyfrontendjobs\.com/[a-zA-Z0-9_/?=&%-]+")
 
 

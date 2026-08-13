@@ -30,7 +30,7 @@
     "privacyPolicyURL": "https://onlyfrontendjobs.com/privacy-policy",
     "termsOfServiceURL": "https://onlyfrontendjobs.com/terms-of-service",
     "defaultPrompt": [
-      "Score my frontend resume with the OFJ rubric.",
+      "Score my frontend resume with the OFJ rubric, then rewrite the full resume in this chat.",
       "Here is a JD and my resume. Should I apply, then tailor it?"
     ],
     "brandColor": "#4f46e5",

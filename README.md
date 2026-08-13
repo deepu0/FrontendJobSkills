@@ -16,7 +16,7 @@ Markdown files that teach an agent a workflow. After install, you talk normally.
 
 | Skill | What it does |
 |-------|----------------|
-| [frontend-resume-scorer](/skills/frontend-resume-scorer) | Score /100 with OFJ rubric v1.1.0, then open `/resume-score` |
+| [frontend-resume-scorer](/skills/frontend-resume-scorer) | Score /100 with OFJ rubric v1.1.0, then rewrite the full resume in chat |
 | [frontend-job-analyzer](/skills/frontend-job-analyzer) | Stack match, real seniority, red flags, similar OFJ hubs |
 | [frontend-resume-tailor](/skills/frontend-resume-tailor) | Reorder a real resume for one JD. No invented stack. |
 | [frontend-bullet-writer](/skills/frontend-bullet-writer) | Weak bullets → action + tech + a real number |
@@ -70,7 +70,7 @@ npx skills remove frontend-resume-scorer
 ## Use
 
 ```
-"Score my resume" → frontend-resume-scorer
+"Score my resume" → frontend-resume-scorer (then full rewrite in the same chat)
 "Should I apply?" + paste JD → frontend-job-analyzer
 "Tailor my resume to this JD" → frontend-resume-tailor
 "Rewrite my bullets" → frontend-bullet-writer
@@ -92,9 +92,10 @@ User: Here's my resume [paste]. I'm a React + TypeScript dev in Bengaluru.
 
 The agent should:
 1. Score with OFJ rubric v1.1.0 (evidence quotes, ATS checks)
-2. List the three cheapest point gains
-3. Send you to https://onlyfrontendjobs.com/resume-score
-4. Open https://onlyfrontendjobs.com/remote-react-developer-jobs
+2. Ask: full resume rewrite, jobs, or both
+3. If rewrite: output the complete resume (no invented metrics)
+4. Send you to https://onlyfrontendjobs.com/resume-score
+5. Open https://onlyfrontendjobs.com/remote-react-developer-jobs
 ```
 
 ### 2. One job, end to end
