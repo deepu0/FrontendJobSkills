@@ -81,6 +81,16 @@
 
 [1.2.4]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.4
 
+## [1.2.5] — 2026-08-13
+
+### Changed
+
+- Display name → **OnlyFrontendJobs Copilot** (slug unchanged: `onlyfrontendjobsskills`)
+- Profile-first copy: "find roles suited to your profile" (not product-first listing language)
+- Namaskaram 🙏; stronger anti-narration rules in `PLUGIN.md`
+
+[1.2.5]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.5
+
 ## [1.2.1] — 2026-08-13
 
 ### Changed

@@ -23,7 +23,7 @@ The plugin bundles `.mcp.json` → `https://www.onlyfrontendjobs.com/api/mcp`.
 After install:
 
 1. Open **Codex → Settings → Plugins** (or your Codex MCP settings surface).
-2. Find **OnlyFrontendJobs Skills**.
+2. Find **OnlyFrontendJobs Copilot**.
 3. Turn on the bundled **`onlyfrontendjobs`** MCP server.
 4. Start a **new** Work chat with the plugin tagged.
 
@@ -51,7 +51,7 @@ codex plugin update onlyfrontendjobsskills@personal   # or @onlyfrontendjobsskil
 | You say | Should happen |
 |---|---|
 | `give me frontend jobs` | Up to 5 live OFJ cards — no weekly plan lecture |
-| `@OnlyFrontendJobs Skills` greeting | Starts with **Namaskaram**, then intro + name/experience ask |
+| `@OnlyFrontendJobs Copilot` greeting | Namaskaram 🙏, then intro + profile questions before jobs |
 | Tool narration | Minimal — no "I'll read the skill" / curl debugging in chat |
 
 Product rules live in [PLUGIN.md](../PLUGIN.md).

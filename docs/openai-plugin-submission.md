@@ -6,7 +6,7 @@ Source: [Submit plugins](https://developers.openai.com/plugins/deploy/submission
 
 Production MCP is live and inspector-green:
 
-- **Plugin name:** OnlyFrontendJobs Skills
+- **Plugin name:** OnlyFrontendJobs Copilot
 - **Slug:** `onlyfrontendjobsskills`
 - **Endpoint:** `https://www.onlyfrontendjobs.com/api/mcp`
 - **Tool:** `search_frontend_jobs` (max 5 portal job cards, no login)
@@ -25,8 +25,8 @@ Production MCP is live and inspector-green:
 
 | Field | Value |
 |---|---|
-| **Name** | OnlyFrontendJobs Skills |
-| **Version** | 1.2.3 |
+| **Name** | OnlyFrontendJobs Copilot |
+| **Version** | 1.2.5 |
 | **Subtitle** (≤30 chars) | Find & tailor frontend jobs |
 | **Description** | Your frontend job-search copilot on OnlyFrontendJobs. Score and rewrite your resume, decide whether a role is worth applying to, tailor bullets to a job description, prep for interviews, estimate salary, and browse fresh React and TypeScript listings. Built for remote and hybrid frontend developers. |
 | **MCP server URL** | `https://www.onlyfrontendjobs.com/api/mcp` |

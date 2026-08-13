@@ -1,7 +1,7 @@
 {
   "name": "onlyfrontendjobsskills-repo",
   "interface": {
-    "displayName": "OnlyFrontendJobs Skills"
+    "displayName": "OnlyFrontendJobs Copilot"
   },
   "plugins": [
     {

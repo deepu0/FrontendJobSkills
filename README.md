@@ -1,4 +1,4 @@
-# OnlyFrontendJobs Skills
+# OnlyFrontendJobs Copilot
 
 **Your frontend job-search copilot on [OnlyFrontendJobs](https://onlyfrontendjobs.com).**
 
@@ -38,7 +38,7 @@ codex plugin marketplace add .
 codex plugin add onlyfrontendjobsskills@onlyfrontendjobsskills-repo
 ```
 
-Work chat → `@OnlyFrontendJobs Skills`
+Work chat → `@OnlyFrontendJobs Copilot`
 
 See [docs/codex-local.md](docs/codex-local.md) to enable live job listings.
 

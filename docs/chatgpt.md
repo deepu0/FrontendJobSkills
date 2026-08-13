@@ -1,12 +1,12 @@
 # ChatGPT & Codex plugin
 
-**OnlyFrontendJobs Skills** helps frontend developers job hunt: resume scoring, job-fit checks, tailoring, interview prep, salary estimates, and live listings from [OnlyFrontendJobs](https://onlyfrontendjobs.com).
+**OnlyFrontendJobs Copilot** helps frontend developers job hunt: find roles suited to your profile, score resumes, judge job posts, tailor applications, and estimate salary — powered by [OnlyFrontendJobs](https://onlyfrontendjobs.com).
 
 ## ChatGPT upload
 
 1. Plugins → Skills → **Upload from your computer**
 2. Upload `dist/onlyfrontendjobsskills-plugin.zip` (`./scripts/pack-chatgpt-plugin.sh`)
-3. Install → new chat → `@OnlyFrontendJobs Skills`
+3. Install → new chat → `@OnlyFrontendJobs Copilot`
 
 ## Codex local
 

@@ -1,6 +1,6 @@
 {
   "name": "onlyfrontendjobsskills",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Frontend job-search skills: resume scoring, JD fit checks, tailoring, salary estimates, and live listings from OnlyFrontendJobs.",
   "author": {
     "name": "deepu0",
@@ -21,8 +21,8 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "OnlyFrontendJobs Skills",
-    "shortDescription": "Score resumes, judge job posts, and find frontend roles",
+    "displayName": "OnlyFrontendJobs Copilot",
+    "shortDescription": "Find matching frontend jobs, score resumes, and apply smarter",
     "longDescription": "Your frontend job-search copilot on OnlyFrontendJobs. Score and rewrite your resume, decide whether a role is worth applying to, tailor bullets to a job description, prep for interviews, estimate salary, and browse fresh React and TypeScript listings. Built for remote and hybrid frontend developers.",
     "developerName": "deepu0",
     "category": "Productivity",

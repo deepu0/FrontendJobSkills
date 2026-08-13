@@ -1,7 +1,7 @@
 {
   "name": "onlyfrontendjobsskills",
-  "version": "1.2.4",
-  "description": "OnlyFrontendJobs Skills — resume scoring, job-fit checks, tailoring, and live listings.",
+  "version": "1.2.5",
+  "description": "OnlyFrontendJobs Copilot — find matching roles, score resumes, and apply smarter.",
   "author": {
     "name": "deepu0",
     "url": "https://github.com/deepu0/FrontendJobSkills"
