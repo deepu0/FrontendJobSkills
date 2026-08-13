@@ -17,3 +17,12 @@
 - Plugin requires no OFJ account
 
 [1.1.0]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.1.0
+
+## [1.1.1] — 2026-08-13
+
+### Added
+
+- `examples/` — sample resume, JD, and copy-paste test prompts for directory review
+- README: ResumeSkills credit, skill categories, supported agents, uninstall section
+
+[1.1.1]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.1.1

@@ -6,6 +6,8 @@ Install once in ChatGPT, Cursor, Claude Code, Codex, or Windsurf. Ask normal que
 
 Not a generic resume pack. Not auto-apply. Not employer Greenhouse/Lever links.
 
+Inspired by [ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills) — same `npx skills` install pattern, but **frontend-only**, rubric-synced to OnlyFrontendJobs, with live job cards when the public API is up.
+
 ## What this is
 
 | | |
@@ -18,14 +20,16 @@ Not a generic resume pack. Not auto-apply. Not employer Greenhouse/Lever links.
 
 ## What you can do
 
-```
-"Score my frontend resume"           → rubric /100, rewrite in chat, link to /resume-score
-"Should I apply?" + JD + resume    → match %, red flags, similar live jobs
-"Tailor my resume to this JD"      → reorder real experience, no invented stack
-"Find React jobs posted this week" → live job cards when OFJ API is up, else category hubs
-"What salary should I ask?"        → OFJ 2025–26 ladder → /salary-calculator
-"Plan my remote search"            → 5–10 tailored apps/week on OFJ
-```
+| You say | Skill |
+|---------|--------|
+| "Score my frontend resume" | `frontend-resume-scorer` → rubric /100, rewrite, `/resume-score` |
+| "Should I apply?" + JD + resume | `frontend-job-analyzer` → match %, red flags, live jobs |
+| "Tailor my resume to this JD" | `frontend-resume-tailor` → reorder truthfully, no fake stack |
+| "Find React jobs this week" | `remote-job-strategy` → live cards or OFJ hubs |
+| "What salary should I ask?" | `salary-calculator` → OFJ ladder → `/salary-calculator` |
+| "Plan my remote search" | `remote-job-strategy` → 5–10 tailored apps/week |
+
+Copy-paste prompts: [examples/expected-prompts.md](examples/expected-prompts.md)
 
 Every job link stays on `onlyfrontendjobs.com`. Apply happens on the OFJ job page.
 
@@ -41,21 +45,46 @@ You → AI agent (skills) → advice + rewritten text in chat
 **Plugin** = same skills zipped for ChatGPT upload or Codex marketplace.  
 **Live jobs** = served by the [fejobs](https://github.com/deepu0/fejobs) app (public API; MCP tool in plugin v1.2 after prod deploy).
 
-## Skills
+## Skills by category
+
+### Resume
 
 | Skill | What it does |
 |-------|----------------|
 | [frontend-resume-scorer](skills/frontend-resume-scorer) | Score /100 with OFJ rubric v1.1.0, full rewrite in chat |
-| [frontend-job-analyzer](skills/frontend-job-analyzer) | Stack fit, real seniority, red flags, similar live jobs |
 | [frontend-resume-tailor](skills/frontend-resume-tailor) | Tailor one resume to one JD — no fake tech |
 | [frontend-bullet-writer](skills/frontend-bullet-writer) | Weak bullets → action + tech + a real metric |
-| [frontend-cover-letter](skills/frontend-cover-letter) | Short letter when the form requires one |
+
+### Job search
+
+| Skill | What it does |
+|-------|----------------|
+| [frontend-job-analyzer](skills/frontend-job-analyzer) | Stack fit, real seniority, red flags, similar live jobs |
+| [remote-job-strategy](skills/remote-job-strategy) | Weekly plan: 5–10 tailored apps on OFJ |
+
+### Online presence
+
+| Skill | What it does |
+|-------|----------------|
 | [frontend-linkedin-optimizer](skills/frontend-linkedin-optimizer) | Headline, About, Featured, Open to Work |
 | [portfolio-reviewer](skills/portfolio-reviewer) | Review a live portfolio or repo (fetch first) |
 | [github-profile-optimizer](skills/github-profile-optimizer) | README, pins, recruiter-ready profile |
+
+### Interview & compensation
+
+| Skill | What it does |
+|-------|----------------|
 | [frontend-interview-prep](skills/frontend-interview-prep) | JS / React / system design from the actual JD |
 | [salary-calculator](skills/salary-calculator) | Estimate pay with OFJ 2025–26 tiers |
-| [remote-job-strategy](skills/remote-job-strategy) | Weekly plan: 5–10 tailored apps on OFJ |
+| [frontend-cover-letter](skills/frontend-cover-letter) | Short letter when the form requires one |
+
+## Supported agents
+
+Works with any tool that loads `SKILL.md` files, including:
+
+- **ChatGPT** — skills plugin upload ([release zip](https://github.com/deepu0/FrontendJobSkills/releases/latest))
+- **Cursor** · **Claude Code** · **Codex** · **Windsurf** · **Gemini CLI** · **OpenCode**
+- **30+ agents** via `npx skills add` (same installer as [ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills))
 
 ## Install
 
@@ -95,10 +124,27 @@ Work chat → `@Frontend Job Skills`
 
 Details: [docs/chatgpt.md](docs/chatgpt.md) · Directory submission: [docs/openai-plugin-submission.md](docs/openai-plugin-submission.md)
 
+### Uninstall
+
+```bash
+npx skills remove frontend-resume-scorer
+npx skills remove frontend-job-analyzer
+# … or remove the whole install directory for your agent, e.g.:
+# rm -rf ~/.cursor/skills/frontend-*
+```
+
+## Try it with sample files
+
+| File | Use |
+|------|-----|
+| [examples/sample-resume-react-mid.md](examples/sample-resume-react-mid.md) | Scorer + tailor demos |
+| [examples/sample-jd-react-senior.md](examples/sample-jd-react-senior.md) | Job analyzer demos |
+| [examples/expected-prompts.md](examples/expected-prompts.md) | Copy-paste test prompts |
+
 ## Example session
 
 ```
-User: Here's my resume [paste]. React + TypeScript, 3 years, Bengaluru.
+User: Here's my resume [paste examples/sample-resume-react-mid.md]. React + TypeScript, 3 years, Bengaluru.
 
 Agent:
 1. Scores with OFJ v1.1.0 (quotes evidence, ATS checks)

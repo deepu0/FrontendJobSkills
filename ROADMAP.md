@@ -18,7 +18,9 @@
 ## Later (only if used)
 
 - [ ] PostHog: `utm_source=frontend-job-skills` / `utm_medium=mcp` signal
-- [ ] Example resumes + JDs in `examples/`
+- [x] `examples/` — sample resume, JD, and test prompts
+- [x] README — ResumeSkills credit, categories, uninstall, supported agents
+- [x] GitHub topics for discoverability
 - [ ] GitHub Actions running `release-check.sh` on PRs
 
 ## Out of scope
