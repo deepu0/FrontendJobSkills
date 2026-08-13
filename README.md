@@ -1,6 +1,6 @@
-# Frontend Job Skills
+# OnlyFrontendJobs Skills
 
-**Open-source AI skills for frontend developers who are job hunting.**
+**Official open-source AI skills for frontend developers on [OnlyFrontendJobs](https://onlyfrontendjobs.com).**
 
 Install once in ChatGPT, Cursor, Claude Code, Codex, or Windsurf. Ask normal questions — the agent follows workflows that score your resume, judge a JD, tailor bullets, prep interviews, and send you to **live pages on [OnlyFrontendJobs](https://onlyfrontendjobs.com)**.
 
@@ -13,7 +13,7 @@ Inspired by [ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills) — s
 | | |
 |---|---|
 | **For** | Frontend / React / TypeScript developers searching remote roles |
-| **Format** | 11 `SKILL.md` workflows + ChatGPT plugin with live jobs MCP (`v1.2.0`) |
+| **Format** | 11 `SKILL.md` workflows + ChatGPT plugin with live jobs MCP (`v1.2.1`) |
 | **Brain** | Your AI agent (skills teach it *how* to help) |
 | **Data** | [OnlyFrontendJobs](https://onlyfrontendjobs.com) — rubric, salary ladder, job listings |
 | **Login** | None required in the plugin. Official resume scan on OFJ may ask for account. |
@@ -110,16 +110,16 @@ npx skills add deepu0/FrontendJobSkills --skill '*' -g -a claude-code -y
 git clone https://github.com/deepu0/FrontendJobSkills.git
 cd FrontendJobSkills
 codex plugin marketplace add .
-codex plugin add frontend-job-skills@frontend-job-skills-repo
+codex plugin add onlyfrontendjobsskills@onlyfrontendjobsskills-repo
 ```
 
-Work chat → `@Frontend Job Skills`
+Work chat → `@OnlyFrontendJobs Skills`
 
 ### ChatGPT (skills upload)
 
 ```bash
 ./scripts/pack-chatgpt-plugin.sh
-# Upload dist/frontend-job-skills-plugin.zip in ChatGPT → Plugins → Skills
+# Upload dist/onlyfrontendjobsskills-plugin.zip in ChatGPT → Plugins → Skills
 ```
 
 Details: [docs/chatgpt.md](docs/chatgpt.md) · Directory submission: [docs/openai-plugin-submission.md](docs/openai-plugin-submission.md)
@@ -157,7 +157,7 @@ Agent:
 
 Skills try in order:
 
-1. MCP `search_frontend_jobs` at `https://onlyfrontendjobs.com/api/mcp` (plugin **v1.2.0**)
+1. MCP `search_frontend_jobs` at `https://onlyfrontendjobs.com/api/mcp` (plugin **v1.2.1**)
 2. `GET https://onlyfrontendjobs.com/api/public/jobs?tech=react`
 3. Verified category hubs in [references/ofj-links.md](references/ofj-links.md)
 
@@ -169,7 +169,7 @@ Resume scoring follows OFJ `resume-rubric.ts` + `ats-checker.ts` (v1.1.0). Salar
 
 ## Roadmap
 
-See [ROADMAP.md](ROADMAP.md). **v1.2.0** = live jobs MCP in the ChatGPT plugin manifest.
+See [ROADMAP.md](ROADMAP.md). **v1.2.1** = OnlyFrontendJobs Skills rebrand + new plugin icons.
 
 ## Contributing
 

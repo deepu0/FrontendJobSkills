@@ -1,6 +1,6 @@
 {
-  "name": "frontend-job-skills",
-  "version": "1.2.0",
+  "name": "onlyfrontendjobsskills",
+  "version": "1.2.1",
   "description": "AI skills for frontend job search: resume scoring, JD analysis, tailoring, and OnlyFrontendJobs links.",
   "author": {
     "name": "deepu0",
@@ -21,8 +21,8 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "Frontend Job Skills",
-    "shortDescription": "Score, tailor, and search frontend jobs with the OnlyFrontendJobs rubric",
+    "displayName": "OnlyFrontendJobs Skills",
+    "shortDescription": "Score, tailor, and search frontend jobs on OnlyFrontendJobs",
     "longDescription": "Eleven AI agent workflows for frontend developers job hunting: score a resume with the OFJ v1.1.0 rubric, judge whether to apply to a JD, tailor bullets without inventing stack, prep interviews, estimate salary, and return up to 5 live OnlyFrontendJobs listings via MCP search_frontend_jobs. Every job link stays on onlyfrontendjobs.com. No login required in the plugin.",
     "developerName": "deepu0",
     "category": "Productivity",
@@ -36,6 +36,6 @@
     ],
     "brandColor": "#4f46e5",
     "logo": "./assets/logo.png",
-    "composerIcon": "./assets/logo.svg"
+    "composerIcon": "./assets/logo-composer.png"
   }
 }

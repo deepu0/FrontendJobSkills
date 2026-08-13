@@ -3,7 +3,7 @@
 set -euo pipefail
 
 root="$(cd "$(dirname "$0")/.." && pwd)"
-archive="$root/dist/frontend-job-skills-plugin.zip"
+archive="$root/dist/onlyfrontendjobsskills-plugin.zip"
 cd "$root"
 
 for manifest in \
@@ -19,8 +19,8 @@ claude_version="$(python3 -c 'import json; print(json.load(open(".claude-plugin/
 config_version="$(python3 -c 'import json; print(json.load(open(".claude-plugin/config.json"))["version"])')"
 test "$version" = "$claude_version"
 test "$version" = "$config_version"
-test "$(python3 -c 'import json; print(json.load(open(".codex-plugin/plugin.json"))["name"])')" = frontend-job-skills
-test "$(python3 -c 'import json; print(json.load(open(".claude-plugin/plugin.json"))["name"])')" = frontend-job-skills
+test "$(python3 -c 'import json; print(json.load(open(".codex-plugin/plugin.json"))["name"])')" = onlyfrontendjobsskills
+test "$(python3 -c 'import json; print(json.load(open(".claude-plugin/plugin.json"))["name"])')" = onlyfrontendjobsskills
 test "$(python3 -c 'import json; print(len(json.load(open(".claude-plugin/config.json"))["skills"]))')" = 11
 
 test "$(find skills -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l | tr -d ' ')" = 11
@@ -41,4 +41,4 @@ if grep -Eq '^(\.agents/|\.claude/|\.codex/|\.cursor/|dist/|tests/)' <<<"$entrie
   exit 1
 fi
 
-echo "Release check passed: Frontend Job Skills $version"
+echo "Release check passed: OnlyFrontendJobs Skills $version"

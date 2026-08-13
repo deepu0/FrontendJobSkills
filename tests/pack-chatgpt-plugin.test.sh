@@ -2,7 +2,7 @@
 set -euo pipefail
 
 root="$(cd "$(dirname "$0")/.." && pwd)"
-archive="$root/dist/frontend-job-skills-plugin.zip"
+archive="$root/dist/onlyfrontendjobsskills-plugin.zip"
 
 bash "$root/scripts/pack-chatgpt-plugin.sh" >/dev/null
 unzip -t "$archive" >/dev/null

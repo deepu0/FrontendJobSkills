@@ -2,9 +2,9 @@
 
 The 2023 ChatGPT plugin store (`ai-plugin.json`) is gone. OpenAI now uses **skills** packaged as a **plugin**.
 
-**Frontend Job Skills** = 11 workflows for frontend developers: resume scoring, JD analysis, tailoring, interview prep, salary, and job search — all ending on [OnlyFrontendJobs](https://onlyfrontendjobs.com). Not a generic resume pack. No login in the plugin.
+**OnlyFrontendJobs Skills** = 11 workflows for frontend developers: resume scoring, JD analysis, tailoring, interview prep, salary, and live job search — all ending on [OnlyFrontendJobs](https://onlyfrontendjobs.com). Not a generic resume pack. No login in the plugin.
 
-Live job cards use the OFJ public API when deployed (`/api/public/jobs`). ChatGPT MCP wiring ships in plugin v1.2 after production is verified.
+Live job cards use MCP `search_frontend_jobs` at `/api/mcp` (plugin v1.2+) with REST fallback at `/api/public/jobs`.
 
 ## What you can do today
 
@@ -14,9 +14,9 @@ Needs access to **Skills**. Availability depends on plan, workspace settings, ro
 
 1. In the ChatGPT sidebar, open **Plugins** → **Skills**
 2. Select **Create → Upload from your computer**
-3. Upload `dist/frontend-job-skills-plugin.zip` (build it below)
+3. Upload `dist/onlyfrontendjobsskills-plugin.zip` (build it below)
 4. After scan, **Install**
-5. New chat → type `@` → pick **Frontend Job Skills** or a skill name
+5. New chat → type `@` → pick **OnlyFrontendJobs Skills** or a skill name
 6. Paste a resume: `Score my frontend resume`
 
 Build the zip:
@@ -25,9 +25,9 @@ Build the zip:
 ./scripts/pack-chatgpt-plugin.sh
 ```
 
-Output: `dist/frontend-job-skills-plugin.zip`
+Output: `dist/onlyfrontendjobsskills-plugin.zip`
 
-The archive root has `.claude-plugin/plugin.json` and `skills/<name>/SKILL.md`, which is what [OpenAI's skills-only upload](https://developers.openai.com/plugins/guides/submit-claude-plugin) expects. See [Skills in ChatGPT](https://help.openai.com/en/articles/20001066) for the current in-product upload flow.
+The archive root has `.claude-plugin/plugin.json`, `.mcp.json`, and `skills/<name>/SKILL.md`. See [Skills in ChatGPT](https://help.openai.com/en/articles/20001066) for the current in-product upload flow.
 
 ### B. ChatGPT desktop / Codex local plugin
 
@@ -42,20 +42,18 @@ On another machine:
 git clone https://github.com/deepu0/FrontendJobSkills.git
 cd FrontendJobSkills
 codex plugin marketplace add .
-codex plugin add frontend-job-skills@frontend-job-skills-repo
+codex plugin add onlyfrontendjobsskills@onlyfrontendjobsskills-repo
 ```
 
-Then open a Work chat and use `@Frontend Job Skills`.
+Then open a Work chat and use `@OnlyFrontendJobs Skills`.
 
-Personal copy (this machine, **installed and enabled** via Codex):
+Personal copy:
 
 ```bash
 mkdir -p ~/.codex/plugins
-ln -sfn /Users/deepaksharma/Documents/FrontendJobSkills ~/.codex/plugins/frontend-job-skills
-codex plugin add frontend-job-skills@personal
+ln -sfn /path/to/FrontendJobSkills ~/.codex/plugins/onlyfrontendjobsskills
+codex plugin add onlyfrontendjobsskills@personal
 ```
-
-Verified: `frontend-job-skills@personal  installed, enabled  1.1.0`
 
 Run `codex plugin list` to confirm the installed version and enabled status.
 
@@ -78,3 +76,4 @@ Blocked here: portal is login + Cloudflare. Needs Apps Management write + verifi
 - `Score this frontend resume:` + paste
 - `Should I apply?` + JD + resume
 - `What salary for a mid React role in Bengaluru?`
+- `Find React frontend jobs posted this week`

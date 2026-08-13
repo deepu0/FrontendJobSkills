@@ -3,7 +3,7 @@
 set -euo pipefail
 root="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$root"
-out="$root/dist/frontend-job-skills-plugin.zip"
+out="$root/dist/onlyfrontendjobsskills-plugin.zip"
 mkdir -p "$root/dist"
 rm -f "$out"
 

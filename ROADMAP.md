@@ -1,5 +1,10 @@
 # Roadmap
 
+## Shipped — v1.2.1
+
+- Plugin renamed to **OnlyFrontendJobs Skills** (slug `onlyfrontendjobsskills`)
+- New plugin icons for ChatGPT directory + composer
+
 ## Shipped — v1.2.0
 
 - Public jobs MCP live on OnlyFrontendJobs (`/api/mcp`, `/api/public/jobs`)
