@@ -25,6 +25,44 @@ test "$(python3 -c 'import json; print(len(json.load(open(".claude-plugin/config
 
 test "$(find skills -mindepth 2 -maxdepth 2 -name SKILL.md | wc -l | tr -d ' ')" = 11
 
+# Every skills/<name>/SKILL.md must declare matching frontmatter name.
+python3 - <<'PY'
+import pathlib
+import re
+import sys
+
+root = pathlib.Path("skills")
+name_re = re.compile(r'^name:\s*(.+?)\s*$', re.MULTILINE)
+failures = []
+for skill_dir in sorted(root.iterdir()):
+    if not skill_dir.is_dir():
+        continue
+    md = skill_dir / "SKILL.md"
+    if not md.exists():
+        failures.append(f"{md}: SKILL.md missing")
+        continue
+    text = md.read_text(errors="ignore")
+    if not text.startswith("---"):
+        failures.append(f"{md}: YAML frontmatter missing")
+        continue
+    parts = text.split("---", 2)
+    if len(parts) < 3:
+        failures.append(f"{md}: malformed frontmatter")
+        continue
+    match = name_re.search(parts[1])
+    if not match:
+        failures.append(f"{md}: 'name:' not found in frontmatter")
+        continue
+    name = match.group(1).strip().strip('"').strip("'")
+    if name != skill_dir.name:
+        failures.append(f"{md}: name '{name}' != directory '{skill_dir.name}'")
+if failures:
+    print("SKILL.md frontmatter check failed:")
+    for failure in failures:
+        print(f"  {failure}")
+    sys.exit(1)
+PY
+
 for agent in .agent .agents .claude .codex .cursor .gemini .opencode .windsurf; do
   diff -qr skills "$agent/skills" >/dev/null
 done
