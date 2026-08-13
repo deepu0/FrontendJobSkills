@@ -96,7 +96,7 @@ and can show matching React roles if you want.
 
 ## For developers
 
-- Live listings: MCP + public API on [fejobs](https://github.com/deepu0/fejobs)
+- Live listings: MCP at `https://www.onlyfrontendjobs.com/api/mcp` + public API at `https://www.onlyfrontendjobs.com/api/public/jobs` (built in the private `fejobs` repo)
 - Resume rubric aligned with OnlyFrontendJobs `resume-rubric.ts` (v1.1.0)
 - Agent rules: [PLUGIN.md](PLUGIN.md) · [CONTRIBUTING.md](CONTRIBUTING.md)
 

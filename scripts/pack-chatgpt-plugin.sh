@@ -5,7 +5,8 @@ root="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$root"
 out="$root/dist/onlyfrontendjobsskills-plugin.zip"
 mkdir -p "$root/dist"
-rm -f "$out"
+# Purge dist so stale zips from older plugin names never linger in releases.
+rm -f "$root"/dist/*.zip
 
 # Archive root must contain .claude-plugin/plugin.json and skills/<name>/SKILL.md
 zip -r "$out" \

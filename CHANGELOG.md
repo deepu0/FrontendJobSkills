@@ -50,6 +50,20 @@
 
 [1.2.0]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.0
 
+## [1.2.1] — 2026-08-13
+
+### Changed
+
+- Renamed plugin to **OnlyFrontendJobs Skills** (slug: `onlyfrontendjobsskills`)
+- New plugin icons (`logo.png`, `logo-256.png`, `logo-48.png`, `logo-composer.png`)
+- Zip output: `dist/onlyfrontendjobsskills-plugin.zip`
+
+### Note
+
+- `utm_source=frontend-job-skills` unchanged in skill links (analytics continuity)
+
+[1.2.1]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.1
+
 ## [1.2.2] — 2026-08-13
 
 ### Changed
@@ -90,17 +104,3 @@
 - Namaskaram 🙏; stronger anti-narration rules in `PLUGIN.md`
 
 [1.2.5]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.5
-
-## [1.2.1] — 2026-08-13
-
-### Changed
-
-- Renamed plugin to **OnlyFrontendJobs Skills** (slug: `onlyfrontendjobsskills`)
-- New plugin icons (`logo.png`, `logo-256.png`, `logo-48.png`, `logo-composer.png`)
-- Zip output: `dist/onlyfrontendjobsskills-plugin.zip`
-
-### Note
-
-- `utm_source=frontend-job-skills` unchanged in skill links (analytics continuity)
-
-[1.2.1]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.2.1
