@@ -1,6 +1,6 @@
 {
   "name": "frontend-job-skills",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Frontend job-search skills for Claude Code: OFJ resume rubric, JD analysis, tailoring, and live job links.",
   "author": "deepu0",
   "license": "MIT",
@@ -12,8 +12,8 @@
     {
       "name": "frontend-resume-scorer",
       "path": "skills/frontend-resume-scorer/SKILL.md",
-      "description": "Score a frontend resume, then rewrite the full resume in chat",
-      "triggers": ["score my resume", "ATS", "resume review", "frontend resume", "fix my resume"]
+      "description": "Score a frontend resume with OFJ rubric v1.1.0, ATS checks, full rewrite",
+      "triggers": ["score my resume", "ATS", "resume review", "fix my resume", "not getting interviews", "frontend resume"]
     },
     {
       "name": "salary-calculator",
@@ -24,14 +24,14 @@
     {
       "name": "frontend-job-analyzer",
       "path": "skills/frontend-job-analyzer/SKILL.md",
-      "description": "Analyze a frontend JD for stack fit and red flags",
-      "triggers": ["should I apply", "analyze this job", "am I qualified"]
+      "description": "Analyze a frontend JD — stack fit, seniority, red flags, live jobs",
+      "triggers": ["should I apply", "analyze this job", "am I qualified", "match score", "job description", "red flags"]
     },
     {
       "name": "frontend-resume-tailor",
       "path": "skills/frontend-resume-tailor/SKILL.md",
       "description": "Tailor a frontend resume to one JD without inventing stack",
-      "triggers": ["tailor resume", "customize resume", "match this job"]
+      "triggers": ["tailor resume", "customize resume", "match this job", "optimize for this role", "resume for this JD"]
     },
     {
       "name": "frontend-bullet-writer",

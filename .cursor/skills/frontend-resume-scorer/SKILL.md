@@ -1,6 +1,6 @@
 ---
 name: frontend-resume-scorer
-description: Score a frontend resume with the OFJ v1.1.0 rubric, then offer a full rewritten resume in this chat and live job links.
+description: Score a frontend resume with the OFJ v1.1.0 rubric, offer a full rewrite in chat, and link live OFJ jobs. Use for ATS review, resume score, or "why no interviews".
 ---
 
 # Frontend Resume Scorer
@@ -17,10 +17,24 @@ Read before scoring:
 
 ## When to Use
 
-- User pastes a frontend resume, PDF text, or asks for a score / ATS review / "why no interviews"
-- React, Vue, Angular, Svelte, TypeScript, or general frontend
+Use when the user:
 
-Do not use this rubric for backend-only or non-dev resumes.
+- Pastes a frontend resume or PDF text
+- Asks to **score**, **rate**, or **review** a resume
+- Mentions **ATS**, **not getting interviews**, **resume not working**, **fix my resume**
+- Names a stack: React, Vue, Angular, Svelte, TypeScript, Next.js, frontend
+
+Do **not** use this rubric for backend-only, PM, or non-dev resumes.
+
+Sample file for demos: `examples/sample-resume-react-mid.md` in the repo root.
+
+## Core capabilities
+
+- Run six ATS checks and assign ATS level/points
+- Score seven rubric categories with **verbatim evidence quotes**
+- Output band (Needs Work → Strong) and three cheapest point gains
+- Offer full resume rewrite in chat (wording/order only)
+- Link live OFJ jobs or hubs after the artifact
 
 ## Procedure
 
@@ -115,3 +129,24 @@ I will not invent stack or numbers.
 Do not dump the official-scan link until after they have the rewrite or they chose jobs only. Then:
 
 https://onlyfrontendjobs.com/resume-score?utm_source=frontend-job-skills&utm_medium=skill&utm_campaign=frontend-resume-scorer
+
+## Before / after (rewrite)
+
+**Bullet — before:** Worked on React dashboard for the ops team.
+
+**Bullet — after:** Built React + TypeScript dashboard used daily by operations; migrated 12 routes from class components to hooks.
+
+**Why:** Named stack, scope, and a real count from the resume. No invented LCP.
+
+**Summary — before:** Frontend developer with React experience.
+
+**Summary — after:** Frontend engineer (3 years) shipping React + TypeScript dashboards; Vitest coverage on shared form components.
+
+**Why:** JD-relevant keywords only where the resume already supports them.
+
+## Edge cases
+
+- **PDF unreadable:** Ask for pasted text. Do not guess content.
+- **No metrics anywhere:** Rewrite with tech + scope; ask one question for a number before inventing.
+- **Junior resume, senior JD:** Score honestly; do not inflate levels to match the JD.
+- **User only wants a number:** Still run ATS checks; offer rewrite after score.

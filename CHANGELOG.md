@@ -26,3 +26,13 @@
 - README: ResumeSkills credit, skill categories, supported agents, uninstall section
 
 [1.1.1]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.1.1
+
+## [1.1.2] — 2026-08-13
+
+### Changed
+
+- Deepened `frontend-resume-scorer`, `frontend-job-analyzer`, and `frontend-resume-tailor` with triggers, core capabilities, before/after examples, and edge cases
+- Expanded CONTRIBUTING skill template
+- Updated Claude plugin trigger phrases for the three core skills
+
+[1.1.2]: https://github.com/deepu0/FrontendJobSkills/releases/tag/v1.1.2

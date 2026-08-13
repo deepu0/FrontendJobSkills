@@ -1,5 +1,10 @@
 # Roadmap
 
+## Shipped — v1.1.2
+
+- Deepened 3 core skills: `frontend-resume-scorer`, `frontend-job-analyzer`, `frontend-resume-tailor` (triggers, before/after, edge cases)
+- Expanded CONTRIBUTING skill template
+
 ## Shipped — v1.1.0
 
 - 11 frontend job-search skills (resume, JD, tailor, LinkedIn, portfolio, GitHub, interview, salary, remote strategy)
