@@ -49,11 +49,13 @@ codex plugin add frontend-job-skills@personal
 
 Verified: `frontend-job-skills@personal  installed, enabled  1.1.0`
 
-### C. Public plugin directory (not done)
+### C. Public plugin directory
 
-https://platform.openai.com/plugins → **Create plugin** → **Skills only** → upload the same zip.
+Follow [Submit plugins](https://developers.openai.com/plugins/deploy/submission).
 
-Blocked until you have **Apps Management** write access and OpenAI identity verification on the org. I cannot finish that from here.
+Paste-ready form: [docs/openai-plugin-submission.md](openai-plugin-submission.md)
+
+Blocked here: portal is login + Cloudflare. Needs Apps Management write + verified identity on your OpenAI org. Submit ≠ published; you publish after they approve.
 
 ## What this is not
 

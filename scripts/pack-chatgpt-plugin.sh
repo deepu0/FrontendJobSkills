@@ -15,7 +15,8 @@ zip -r "$out" \
   references \
   LICENSE \
   README.md \
-  -x 'skills/*/.DS_Store'
+  assets \
+  -x 'skills/*/.DS_Store' -x 'assets/.DS_Store'
 
 echo "Wrote $out"
 unzip -l "$out" | head -40

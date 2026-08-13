@@ -61,7 +61,7 @@ This is a **skills-only** plugin (2026 OpenAI format). Not the old 2023 plugin s
 
 Then in ChatGPT: [Skills](https://chatgpt.com/skills) → Create → Upload → `dist/frontend-job-skills-plugin.zip`.
 
-Full steps: [docs/chatgpt.md](docs/chatgpt.md).
+Full steps: [docs/chatgpt.md](docs/chatgpt.md). Public directory form: [docs/openai-plugin-submission.md](docs/openai-plugin-submission.md).
 
 ```bash
 npx skills remove frontend-resume-scorer

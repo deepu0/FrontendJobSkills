@@ -33,6 +33,8 @@
       "Score my frontend resume with the OFJ rubric.",
       "Here is a JD and my resume. Should I apply, then tailor it?"
     ],
-    "brandColor": "#4f46e5"
+    "brandColor": "#4f46e5",
+    "logo": "./assets/logo.png",
+    "composerIcon": "./assets/logo.svg"
   }
 }
