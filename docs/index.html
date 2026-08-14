@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>OnlyFrontendJobs Copilot — Frontend job-search toolkit for your AI agent</title>
+<meta name="description" content="Score your frontend resume 0–100, tailor to any JD, browse live frontend jobs — inside ChatGPT, Cursor, Claude, Codex and 30+ agents. Frontend-only, evidence-based." />
+<meta property="og:title" content="OnlyFrontendJobs Copilot" />
+<meta property="og:description" content="Score resume 0–100, tailor to JD, browse live frontend jobs inside your AI agent." />
+<meta property="og:image" content="https://raw.githubusercontent.com/deepu0/FrontendJobSkills/main/assets/logo.png" />
+<meta property="og:url" content="https://deepu0.github.io/FrontendJobSkills/" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="../assets/logo-48.png" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{brand:'#4f46e5',ink:'#0f172a',muted:'#64748b',line:'#e2e8f0',surface:'#f8fafc'},fontFamily:{sans:['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica','Arial']}}}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<style>
+*{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+.grid-bg{background-image:linear-gradient(to right,#e2e8f0 1px,transparent 1px),linear-gradient(to bottom,#e2e8f0 1px,transparent 1px);background-size:40px 40px}
+</style>
+</head>
+<body class="bg-white text-ink antialiased">
+<!-- Top bar -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-line">
+<div class="max-w-[1120px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+<a href="#" class="flex items-center gap-3">
+<img src="../assets/logo-48.png" alt="OnlyFrontendJobs" class="w-7 h-7 rounded-md" />
+<span class="font-semibold text-[15px]">OnlyFrontendJobs Copilot</span>
+<span class="hidden sm:inline text-xs border border-line rounded-full px-2 py-0.5 text-muted">v1.2.5 · 11 skills · MIT</span>
+</a>
+<nav class="hidden md:flex items-center gap-6 text-sm text-muted">
+<a href="#skills" class="hover:text-ink">Skills</a>
+<a href="#install" class="hover:text-ink">Install</a>
+<a href="#demo" class="hover:text-ink">Demo</a>
+<a href="https://github.com/deepu0/FrontendJobSkills" class="hover:text-ink">GitHub</a>
+</nav>
+<div class="flex items-center gap-2">
+<a href="https://github.com/deepu0/FrontendJobSkills" class="hidden sm:inline-flex text-sm border border-line rounded-full px-3 py-1.5 hover:bg-surface">★ Star on GitHub</a>
+<a href="#install" class="inline-flex text-sm bg-brand text-white rounded-full px-4 py-1.5 hover:bg-indigo-700">Install in 30s</a>
+</div>
+</div>
+</header>
+
+<!-- Hero -->
+<section class="relative overflow-hidden">
+<div class="absolute inset-0 grid-bg opacity-[0.35] pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none"></div>
+<div class="relative max-w-[1120px] mx-auto px-4 sm:px-6 pt-10 sm:pt-16 pb-10">
+<div class="inline-flex items-center gap-2 text-xs border border-line rounded-full px-3 py-1 bg-white">
+<span class="w-2 h-2 bg-emerald-500 rounded-full"></span> Live jobs via OnlyFrontendJobs MCP · No fake listings
+<span class="hidden sm:inline text-muted">· Frontend-only</span>
+</div>
+<h1 class="mt-5 text-[32px] sm:text-[44px] font-semibold tracking-tight leading-[1.05] max-w-3xl">
+The frontend job-search toolkit that lives inside your AI agent.
+</h1>
+<p class="mt-4 text-[16px] sm:text-[17px] leading-7 text-muted max-w-2xl">
+Score your resume <strong class="text-ink">0–100</strong> with evidence, tailor bullets to any JD, and browse <strong class="text-ink">live frontend listings</strong> — without leaving ChatGPT, Cursor, Claude or Codex. Built for React / TypeScript / Next.js.
+</p>
+<div class="mt-6 flex flex-wrap items-center gap-3">
+<button onclick="copyText('npx skills add deepu0/FrontendJobSkills --skill * -g -a * -y')" class="inline-flex items-center gap-2 bg-ink text-white rounded-full px-5 py-3 text-sm font-medium hover:bg-black">
+<span class="code text-[13px]">npx skills add deepu0/FrontendJobSkills</span>
+<span class="opacity-60">— copy</span>
+</button>
+<a href="https://onlyfrontendjobs.com/jobs" target="_blank" class="inline-flex items-center gap-2 border border-line rounded-full px-5 py-3 text-sm bg-white hover:bg-surface">View live jobs →</a>
+<a href="https://github.com/deepu0/FrontendJobSkills" class="inline-flex items-center gap-2 text-sm text-muted hover:text-ink px-2">MIT · 11 skills · 30+ agents</a>
+</div>
+<p class="mt-3 text-xs text-muted">No account needed. Every job link opens on <span class="text-ink">onlyfrontendjobs.com</span> — never Greenhouse/Lever.</p>
+
+<!-- Preview card -->
+<div class="mt-8 grid lg:grid-cols-[1.15fr_0.85fr] gap-4">
+<div class="border border-line rounded-2xl overflow-hidden bg-white shadow-sm">
+<div class="h-9 flex items-center gap-2 px-4 border-b border-line bg-surface">
+<span class="w-3 h-3 rounded-full bg-red-400"></span><span class="w-3 h-3 rounded-full bg-yellow-400"></span><span class="w-3 h-3 rounded-full bg-green-400"></span>
+<span class="ml-2 text-xs text-muted">ChatGPT / Codex — OnlyFrontendJobs Copilot</span>
+</div>
+<div class="p-4 sm:p-5 code text-[12.5px] leading-6">
+<div class="text-muted">You:</div>
+<div class="bg-surface border border-line rounded-xl px-3 py-2 mt-1">Score my resume [paste]. 3 years React, Bengaluru, looking remote.</div>
+<div class="text-muted mt-4">Copilot — Namaskaram 🙏</div>
+<div class="border border-line rounded-xl px-3 py-3 mt-1 bg-white">
+<div class="font-semibold text-ink">Scored 64/100</div>
+<div class="text-muted">ATS 8/10 · Impact 2/4 · Keywords 3/4</div>
+<div class="mt-2 text-ink">“Built dashboard” → <span class="bg-yellow-100 px-1">“Shipped React dashboard for 12k MAU, cut LCP 2.8→1.9s”</span></div>
+<div class="mt-2">Top 3 gains: <span class="font-medium">+6pts</span> add scope to 2 bullets, <span class="font-medium">+4pts</span> move skills above projects</div>
+<div class="mt-3 text-brand">Want (1) full rewrite, (2) jobs only, or (3) both?</div>
+</div>
+<div class="text-muted mt-3">You: 3</div>
+<div class="border border-line rounded-xl px-3 py-3 mt-1">
+<div class="font-medium">[Full rewrite — same facts, stronger bullets]</div>
+<div class="text-muted">+ 3 live React roles matched to your stack:</div>
+<div class="mt-2 space-y-1">
+<div>Senior Frontend — React · Remote · <a class="text-brand underline" href="https://onlyfrontendjobs.com/jobs" target="_blank">onlyfrontendjobs.com/jobs/…</a></div>
+<div>Mid React + TS · Bengaluru (hybrid) · <a class="text-brand underline" href="https://onlyfrontendjobs.com/jobs" target="_blank">onlyfrontendjobs.com/jobs/…</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="border border-line rounded-2xl p-5 bg-surface">
+<h3 class="font-semibold">Why frontend devs star this</h3>
+<ul class="mt-3 space-y-3 text-sm leading-6">
+<li class="flex gap-3"><span class="mt-1 w-6 h-6 rounded-full bg-white border border-line flex items-center justify-center text-xs">●</span><span><strong>Live jobs, not stale dumps</strong> — MCP at <span class="code">onlyfrontendjobs.com/api/mcp</span> + REST fallback. No invented listings.</span></li>
+<li class="flex gap-3"><span class="mt-1 w-6 h-6 rounded-full bg-white border border-line flex items-center justify-center text-xs">●</span><span><strong>Evidence-based score</strong> — 7 rubric categories + 6 ATS checks. Each point needs a verbatim quote.</span></li>
+<li class="flex gap-3"><span class="mt-1 w-6 h-6 rounded-full bg-white border border-line flex items-center justify-center text-xs">●</span><span><strong>One prompt to value</strong> — paste resume → score + rewrite + matching jobs in one thread.</span></li>
+<li class="flex gap-3"><span class="mt-1 w-6 h-6 rounded-full bg-white border border-line flex items-center justify-center text-xs">●</span><span><strong>Frontend-only</strong> — React / Next.js / TypeScript. No backend/PM noise.</span></li>
+</ul>
+<div class="mt-5 grid grid-cols-3 gap-3 text-center">
+<div class="bg-white border border-line rounded-xl py-3"><div class="font-semibold">11</div><div class="text-xs text-muted">skills</div></div>
+<div class="bg-white border border-line rounded-xl py-3"><div class="font-semibold">30+</div><div class="text-xs text-muted">agents</div></div>
+<div class="bg-white border border-line rounded-xl py-3"><div class="font-semibold">MIT</div><div class="text-xs text-muted">license</div></div>
+</div>
+<div class="mt-5 flex gap-2">
+<a href="#install" class="flex-1 text-center bg-brand text-white rounded-full py-2.5 text-sm">Install — 30s</a>
+<a href="https://github.com/deepu0/FrontendJobSkills" class="flex-1 text-center bg-white border border-line rounded-full py-2.5 text-sm">Star on GitHub</a>
+</div>
+<p class="mt-2 text-xs text-muted text-center">If this saved you 2 hours, ⭐ helps other devs find it.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Logos / trust -->
+<section class="border-y border-line bg-surface">
+<div class="max-w-[1120px] mx-auto px-4 sm:px-6 py-4 flex flex-wrap items-center gap-3 text-xs text-muted">
+<span>Works with</span>
+<span class="border border-line bg-white rounded-full px-3 py-1">ChatGPT</span>
+<span class="border border-line bg-white rounded-full px-3 py-1">Cursor</span>
+<span class="border border-line bg-white rounded-full px-3 py-1">Claude Code</span>
+<span class="border border-line bg-white rounded-full px-3 py-1">Codex</span>
+<span class="border border-line bg-white rounded-full px-3 py-1">Windsurf</span>
+<span class="border border-line bg-white rounded-full px-3 py-1">Gemini CLI</span>
+<span class="border border-line bg-white rounded-full px-3 py-1">OpenCode</span>
+<span class="ml-auto hidden sm:inline">Inspired by <a class="underline" href="https://github.com/Paramchoudhary/ResumeSkills">ResumeSkills</a> · Synced to OnlyFrontendJobs rubric v1.1.0</span>
+</div>
+</section>
+
+<!-- Install -->
+<section id="install" class="max-w-[1120px] mx-auto px-4 sm:px-6 py-10">
+<h2 class="text-xl font-semibold">Install — pick your agent</h2>
+<p class="text-sm text-muted mt-1">Same skills, same rubric, everywhere. No account on OnlyFrontendJobs needed.</p>
+<div class="mt-5 border border-line rounded-2xl overflow-hidden bg-white">
+<div class="flex border-b border-line bg-surface">
+<button data-tab="npx" class="tab-btn flex-1 py-3 text-sm font-medium bg-white border-b-2 border-brand">Any agent (npx skills)</button>
+<button data-tab="codex" class="tab-btn flex-1 py-3 text-sm text-muted hover:text-ink">Codex plugin</button>
+<button data-tab="chatgpt" class="tab-btn flex-1 py-3 text-sm text-muted hover:text-ink">ChatGPT</button>
+</div>
+<div class="p-4 sm:p-6">
+<div data-panel="npx" class="tab-panel">
+<div class="flex items-center justify-between gap-3 bg-ink text-white rounded-xl px-4 py-3 code text-[13px]">
+<span class="truncate">npx skills add deepu0/FrontendJobSkills --skill '*' -g -a '*' -y</span>
+<button onclick="copyText('npx skills add deepu0/FrontendJobSkills --skill * -g -a * -y')" class="shrink-0 bg-white text-ink rounded-full px-3 py-1 text-xs">Copy</button>
+</div>
+<p class="text-xs text-muted mt-2">Works on 30+ agents via <span class="code">npx skills</span>. Then tag <span class="code">@OnlyFrontendJobs Copilot</span> in chat.</p>
+</div>
+<div data-panel="codex" class="tab-panel hidden">
+<div class="bg-surface border border-line rounded-xl p-4 code text-[13px] leading-6">
+git clone https://github.com/deepu0/FrontendJobSkills.git<br/>
+cd FrontendJobSkills<br/>
+codex plugin marketplace add .<br/>
+codex plugin add onlyfrontendjobsskills@onlyfrontendjobsskills-repo<br/>
+<span class="text-muted"># then Codex → Settings → Plugins → enable bundled “onlyfrontendjobs” MCP</span>
+</div>
+<button onclick="copyText('git clone https://github.com/deepu0/FrontendJobSkills.git\ncd FrontendJobSkills\ncodex plugin marketplace add .\ncodex plugin add onlyfrontendjobsskills@onlyfrontendjobsskills-repo')" class="mt-3 bg-ink text-white rounded-full px-4 py-2 text-xs">Copy commands</button>
+<p class="text-xs text-muted mt-2">Details: <a class="underline text-brand" href="codex-local.md">docs/codex-local.md</a></p>
+</div>
+<div data-panel="chatgpt" class="tab-panel hidden">
+<div class="bg-surface border border-line rounded-xl p-4 code text-[13px] leading-6">
+./scripts/pack-chatgpt-plugin.sh<br/>
+<span class="text-muted"># upload dist/onlyfrontendjobsskills-plugin.zip → ChatGPT → Plugins → Skills</span>
+</div>
+<button onclick="copyText('./scripts/pack-chatgpt-plugin.sh')" class="mt-3 bg-ink text-white rounded-full px-4 py-2 text-xs">Copy</button>
+<p class="text-xs text-muted mt-2">Guide: <a class="underline text-brand" href="chatgpt.md">docs/chatgpt.md</a> · <a class="underline text-brand" href="openai-plugin-submission.md">directory submission</a></p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="bg-surface border-y border-line">
+<div class="max-w-[1120px] mx-auto px-4 sm:px-6 py-10">
+<h2 class="text-xl font-semibold">11 frontend-only skills</h2>
+<p class="text-sm text-muted mt-1">Each lives in <span class="code">skills/&lt;name&gt;/SKILL.md</span> — frontmatter name must match folder.</p>
+<div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="bg-white border border-line rounded-2xl p-5">
+<div class="text-xs text-brand font-medium">RESUME</div>
+<h3 class="font-semibold mt-1">frontend-resume-scorer</h3>
+<p class="text-sm text-muted mt-1">Score 0–100, 6 ATS checks, full rewrite in chat. Evidence quotes required.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/frontend-resume-scorer" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+<div class="bg-white border border-line rounded-2xl p-5">
+<div class="text-xs text-brand font-medium">RESUME</div>
+<h3 class="font-semibold mt-1">frontend-resume-tailor</h3>
+<p class="text-sm text-muted mt-1">Match one resume to one JD. Reorder real experience — no invented stack.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/frontend-resume-tailor" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+<div class="bg-white border border-line rounded-2xl p-5">
+<div class="text-xs text-brand font-medium">RESUME</div>
+<h3 class="font-semibold mt-1">frontend-bullet-writer</h3>
+<p class="text-sm text-muted mt-1">Rewrite bullets with scope + tech. No fake metrics.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/frontend-bullet-writer" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+<div class="bg-white border border-line rounded-2xl p-5">
+<div class="text-xs text-brand font-medium">JOB SEARCH</div>
+<h3 class="font-semibold mt-1">frontend-job-analyzer</h3>
+<p class="text-sm text-muted mt-1">Should you apply? Stack fit, seniority, red flags, similar live roles.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/frontend-job-analyzer" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+<div class="bg-white border border-line rounded-2xl p-5 ring-1 ring-brand/20">
+<div class="text-xs text-brand font-medium">JOB SEARCH · LIVE</div>
+<h3 class="font-semibold mt-1">remote-job-strategy</h3>
+<p class="text-sm text-muted mt-1">Live listings (MCP + REST) or weekly plan. City asks bridge to <span class="code">jobs?location=city</span>.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/remote-job-strategy" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+<div class="bg-white border border-line rounded-2xl p-5">
+<div class="text-xs text-brand font-medium">INTERVIEW</div>
+<h3 class="font-semibold mt-1">frontend-interview-prep</h3>
+<p class="text-sm text-muted mt-1">JS / React / system design prep for frontend rounds.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/frontend-interview-prep" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+<div class="bg-white border border-line rounded-2xl p-5">
+<div class="text-xs text-muted font-medium">PRESENCE</div>
+<h3 class="font-semibold mt-1">frontend-linkedin-optimizer</h3>
+<p class="text-sm text-muted mt-1">Headline, About, Featured — recruiter-ready.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/frontend-linkedin-optimizer" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+<div class="bg-white border border-line rounded-2xl p-5">
+<div class="text-xs text-muted font-medium">PRESENCE</div>
+<h3 class="font-semibold mt-1">portfolio-reviewer</h3>
+<p class="text-sm text-muted mt-1">Portfolio or repo review for hiring managers.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/portfolio-reviewer" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+<div class="bg-white border border-line rounded-2xl p-5">
+<div class="text-xs text-muted font-medium">PRESENCE</div>
+<h3 class="font-semibold mt-1">github-profile-optimizer</h3>
+<p class="text-sm text-muted mt-1">Pinned repos, README, and activity for recruiters.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/github-profile-optimizer" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+<div class="bg-white border border-line rounded-2xl p-5">
+<div class="text-xs text-muted font-medium">UTILS</div>
+<h3 class="font-semibold mt-1">salary-calculator</h3>
+<p class="text-sm text-muted mt-1">Pay range for your stack / city → official calculator link.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/salary-calculator" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+<div class="bg-white border border-line rounded-2xl p-5">
+<div class="text-xs text-muted font-medium">UTILS</div>
+<h3 class="font-semibold mt-1">frontend-cover-letter</h3>
+<p class="text-sm text-muted mt-1">Short letter when the form requires it.</p>
+<a href="https://github.com/deepu0/FrontendJobSkills/tree/main/skills/frontend-cover-letter" class="text-xs underline mt-2 inline-block">Open skill →</a>
+</div>
+</div>
+<p class="text-xs text-muted mt-4">Quality gates: <span class="code">bash scripts/release-check.sh</span> + <span class="code">verify-ofj-links</span> + CI on every PR. Portal-only links — never employer ATS.</p>
+</div>
+</section>
+
+<!-- Demo + Quick win -->
+<section id="demo" class="max-w-[1120px] mx-auto px-4 sm:px-6 py-10 grid lg:grid-cols-2 gap-6">
+<div class="border border-line rounded-2xl p-6 bg-white">
+<h2 class="font-semibold">Try in 60 seconds — no install</h2>
+<ol class="mt-3 space-y-3 text-sm leading-6">
+<li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-ink text-white flex items-center justify-center text-xs shrink-0">1</span><span>Copy <a class="underline text-brand" href="https://github.com/deepu0/FrontendJobSkills/blob/main/examples/sample-resume-react-mid.md">sample-resume-react-mid.md</a></span></li>
+<li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-ink text-white flex items-center justify-center text-xs shrink-0">2</span><span>In your agent: <span class="code bg-surface border border-line rounded px-1.5 py-0.5">Score my frontend resume</span> + paste</span></li>
+<li class="flex gap-3"><span class="w-6 h-6 rounded-full bg-ink text-white flex items-center justify-center text-xs shrink-0">3</span><span>Get 0–100 + rewrite + 3 live React roles. Then <span class="code">Should I apply?</span> with a JD.</span></li>
+</ol>
+<div class="mt-4 flex gap-2">
+<a href="https://github.com/deepu0/FrontendJobSkills/blob/main/examples/expected-prompts.md" class="bg-ink text-white rounded-full px-4 py-2 text-sm">Copy-paste prompts</a>
+<a href="https://github.com/deepu0/FrontendJobSkills" class="border border-line rounded-full px-4 py-2 text-sm bg-white">★ Star to save</a>
+</div>
+<p class="text-xs text-muted mt-2">No signup. No invented metrics. All jobs on onlyfrontendjobs.com.</p>
+</div>
+<div class="border border-line rounded-2xl p-6 bg-surface">
+<h3 class="font-semibold">For developers</h3>
+<ul class="mt-3 space-y-2 text-sm text-muted">
+<li>Live listings: <span class="code">GET https://www.onlyfrontendjobs.com/api/public/jobs</span> + MCP <span class="code">/api/mcp</span></li>
+<li>Rubric synced to <span class="code">resume-rubric.ts v1.1.0</span> — quote or no points</li>
+<li>Agent rules: <a class="underline" href="https://github.com/deepu0/FrontendJobSkills/blob/main/PLUGIN.md">PLUGIN.md</a> · <a class="underline" href="https://github.com/deepu0/FrontendJobSkills/blob/main/CONTRIBUTING.md">CONTRIBUTING</a></li>
+<li>Release gate: <span class="code">bash scripts/release-check.sh</span> (CI runs on every PR)</li>
+</ul>
+<div class="mt-4 code text-xs bg-ink text-white rounded-xl p-4">
+<span class="text-white/60"># after you edit skills/&lt;name&gt;/SKILL.md</span><br/>
+./scripts/sync-agent-copies.sh<br/>
+bash scripts/release-check.sh<br/>
+bash tests/portal-only-links.test.sh
+</div>
+</div>
+</section>
+
+<footer class="border-t border-line py-8">
+<div class="max-w-[1120px] mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted">
+<div>© OnlyFrontendJobs Copilot · MIT · <a class="underline" href="https://onlyfrontendjobs.com">onlyfrontendjobs.com</a> · Built for React / TS / Next.js</div>
+<div class="flex items-center gap-4">
+<a class="hover:text-ink" href="https://github.com/deepu0/FrontendJobSkills">GitHub</a>
+<a class="hover:text-ink" href="https://github.com/deepu0/FrontendJobSkills/blob/main/CONTRIBUTING.md">Contribute</a>
+<a class="hover:text-ink" href="https://github.com/deepu0/FrontendJobSkills/blob/main/SECURITY.md">Security</a>
+</div>
+</div>
+</footer>
+
+<div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-ink text-white text-sm rounded-full px-4 py-2 hidden">Copied</div>
+
+<script>
+function copyText(t){navigator.clipboard.writeText(t);const el=document.getElementById('toast');el.textContent='Copied';el.classList.remove('hidden');setTimeout(()=>el.classList.add('hidden'),1200)}
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+  document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('bg-white','border-b-2','border-brand');b.classList.add('text-muted')});
+  btn.classList.add('bg-white','border-b-2','border-brand');btn.classList.remove('text-muted');
+  const tab=btn.dataset.tab;
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.add('hidden'));
+  document.querySelector(`[data-panel="${tab}"]`).classList.remove('hidden');
+ })
+})
+</script>
+</body>
+</html>
