@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or discussion
+    url: https://github.com/deepu0/FrontendJobSkills/discussions
+    about: Ask about install, skills, or OnlyFrontendJobs integration
+  - name: OnlyFrontendJobs site issue
+    url: https://onlyfrontendjobs.com
+    about: Report a bug on the main job site (not this skills repo)

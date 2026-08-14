@@ -81,6 +81,8 @@ Finding roles suited to your profile…
 
 Then call MCP or REST with their `tech`, `level`, `posted_within_days` (default 7).
 
+**City asks (e.g. "only in Bengaluru"):** the live search can't filter by city. One honest line, search their stack anyway (keeping filters from earlier in the thread), then share the city-filtered list: `https://onlyfrontendjobs.com/jobs?location=<city>`. Never pass off remote or nearby-city roles as that city's jobs.
+
 ---
 
 ## Live job results — rich display

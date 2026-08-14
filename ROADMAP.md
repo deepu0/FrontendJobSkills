@@ -1,5 +1,26 @@
 # Roadmap
 
+## Shipped — v1.2.5
+
+- Product voice → **OnlyFrontendJobs Copilot** (slug `onlyfrontendjobsskills`)
+- City-filter honesty: live search can't filter by city — bridge to `onlyfrontendjobs.com/jobs?location=<city>`
+- Leaner install docs + OnlyFrontendJobs badge
+
+## Shipped — v1.2.4
+
+- Discover-before-dump: ask experience/stack/location before fetching jobs
+- Rich job cards: no visible UTM, bare URL for ChatGPT unfurl
+
+## Shipped — v1.2.3
+
+- Copy pass: removed internal jargon from README and skill descriptions
+- Namaskaram 🙏 greeting + onboarding flow
+
+## Shipped — v1.2.2
+
+- Split `remote-job-strategy` into instant listings vs weekly plan
+- `www.onlyfrontendjobs.com` API host to avoid 308
+
 ## Shipped — v1.2.1
 
 - Plugin renamed to **OnlyFrontendJobs Skills** (slug `onlyfrontendjobsskills`)
@@ -33,7 +54,7 @@
 - [x] `examples/` — sample resume, JD, and test prompts
 - [x] README — ResumeSkills credit, categories, uninstall, supported agents
 - [x] GitHub topics for discoverability
-- [ ] GitHub Actions running `release-check.sh` on PRs
+- [x] GitHub Actions running `release-check.sh` on PRs (`.github/workflows/ci.yml`)
 
 ## Out of scope
 

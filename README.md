@@ -1,12 +1,32 @@
 # OnlyFrontendJobs Copilot
 
-**Your frontend job-search copilot on [OnlyFrontendJobs](https://onlyfrontendjobs.com).**
+[![CI](https://github.com/deepu0/FrontendJobSkills/actions/workflows/ci.yml/badge.svg)](https://github.com/deepu0/FrontendJobSkills/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/badge/version-1.2.5-4f46e5)](CHANGELOG.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Skills](https://img.shields.io/badge/skills-11-0ea5e9)](#skills)
+[![OnlyFrontendJobs](https://img.shields.io/badge/powered%20by-OnlyFrontendJobs-ff6b35)](https://onlyfrontendjobs.com)
 
-Install in ChatGPT, Cursor, Claude Code, Codex, or Windsurf. Score your resume, judge a job post, tailor applications, prep interviews, estimate salary, and browse **live frontend listings**.
+**The frontend job-search toolkit that lives inside your AI agent.**
 
-Built for React, TypeScript, and remote roles — not a generic resume pack.
+Score your resume 0–100, judge any JD, tailor bullets, prep React interviews, estimate salary, and browse **live frontend listings** — without leaving ChatGPT, Cursor, Claude, or Codex.
 
-Inspired by [ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills) — same `npx skills` install pattern, synced to OnlyFrontendJobs.
+> Built for **React / TypeScript / Next.js** and remote roles. Not a generic resume pack.
+
+<p align="center">
+  <img src="assets/logo.png" width="160" alt="OnlyFrontendJobs Copilot logo" />
+</p>
+
+Inspired by [ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills) — same `npx skills` install, synced to [OnlyFrontendJobs](https://onlyfrontendjobs.com) rubric v1.1.0.
+
+---
+
+## Why frontend devs star this
+
+- **Live jobs, not stale dumps** — MCP at `onlyfrontendjobs.com/api/mcp` + REST fallback. No fake listings.
+- **Evidence-based resume score** — 7 rubric categories + 6 ATS checks, each point needs a verbatim quote.
+- **One prompt to value** — paste resume → get score + rewrite + matching jobs in one thread.
+- **Frontend-only** — no backend/PM/data noise. Every example is React, JS, or UI.
+- **30-second install** — works with `npx skills` on 30+ agents.
 
 ## What you can do
 
@@ -21,13 +41,33 @@ Inspired by [ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills) — s
 
 Copy-paste test prompts: [examples/expected-prompts.md](examples/expected-prompts.md)
 
+## 30-second demo
+
+```text
+You: Score my resume [paste]. 3 years React, Bengaluru, looking remote.
+
+Copilot: Namaskaram 🙏 — Scored 64/100
+  • ATS: 8/10 (single column ✓, keywords ✓, no tables)
+  • Impact: 2/4 — "Built dashboard" → "Shipped React dashboard for 12k MAU, cut LCP 2.8→1.9s"
+  • Top 3 gains: +6 pts add scope to 2 bullets, +4 pts move skills above projects
+  Want (1) full resume rewrite, (2) jobs only, or (3) both?
+
+You: 3
+
+Copilot: [Full resume rewrite — same facts, stronger bullets] + 3 live React roles near your stack
+```
+
+> No invented metrics. No employer ATS links — every job opens on `onlyfrontendjobs.com`.
+
 ## Install
 
-### Any agent (`npx skills`)
+### Any agent (`npx skills`) — recommended
 
 ```bash
 npx skills add deepu0/FrontendJobSkills --skill '*' -g -a '*' -y
 ```
+
+Works on ChatGPT, Cursor, Claude Code, Codex, Windsurf, Gemini CLI, OpenCode, and 30+ agents.
 
 ### Codex plugin
 
@@ -36,17 +76,16 @@ git clone https://github.com/deepu0/FrontendJobSkills.git
 cd FrontendJobSkills
 codex plugin marketplace add .
 codex plugin add onlyfrontendjobsskills@onlyfrontendjobsskills-repo
+# then in Codex → Settings → Plugins → enable bundled "onlyfrontendjobs" MCP
 ```
 
-Work chat → `@OnlyFrontendJobs Copilot`
-
-See [docs/codex-local.md](docs/codex-local.md) to enable live job listings.
+Work chat → `@OnlyFrontendJobs Copilot` · Details: [docs/codex-local.md](docs/codex-local.md)
 
 ### ChatGPT
 
 ```bash
 ./scripts/pack-chatgpt-plugin.sh
-# Upload dist/onlyfrontendjobsskills-plugin.zip
+# Upload dist/onlyfrontendjobsskills-plugin.zip → Plugins → Skills
 ```
 
 [docs/chatgpt.md](docs/chatgpt.md) · [Directory submission](docs/openai-plugin-submission.md)
@@ -83,22 +122,31 @@ See [docs/codex-local.md](docs/codex-local.md) to enable live job listings.
 
 ChatGPT · Cursor · Claude Code · Codex · Windsurf · Gemini CLI · OpenCode · 30+ via `npx skills`
 
-## Example session
+## Quick win — 60 seconds
 
-```
-User: Score my resume [paste]. 3 years React, Bengaluru, looking remote.
+1. Copy `examples/sample-resume-react-mid.md`
+2. In your agent: `Score my frontend resume` + paste
+3. Get 0–100 + rewrite + 3 live React roles — no signup
 
-Agent:
-Namaskaram! … scores categories with evidence, offers rewrite,
-links to the official resume scorer on OnlyFrontendJobs,
-and can show matching React roles if you want.
-```
+> If you found it useful, ⭐ this repo — it helps other frontend devs discover it.
 
 ## For developers
 
 - Live listings: MCP at `https://www.onlyfrontendjobs.com/api/mcp` + public API at `https://www.onlyfrontendjobs.com/api/public/jobs` (built in the private `fejobs` repo)
 - Resume rubric aligned with OnlyFrontendJobs `resume-rubric.ts` (v1.1.0)
 - Agent rules: [PLUGIN.md](PLUGIN.md) · [CONTRIBUTING.md](CONTRIBUTING.md)
+- Release gate: `bash scripts/release-check.sh` (also runs in CI)
+
+## Contributing
+
+Frontend-only skills. Generic resume advice belongs in [ResumeSkills](https://github.com/Paramchoudhary/ResumeSkills).
+
+1. Fork and branch
+2. Edit `skills/<name>/SKILL.md`
+3. Run `./scripts/sync-agent-copies.sh` and `bash scripts/release-check.sh`
+4. Open PR — see [pull request template](.github/pull_request_template.md)
+
+More: [CONTRIBUTING.md](CONTRIBUTING.md) · [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) · [SECURITY.md](SECURITY.md)
 
 ## License
 

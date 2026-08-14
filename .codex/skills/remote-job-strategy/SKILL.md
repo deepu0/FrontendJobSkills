@@ -34,6 +34,14 @@ Confirm in one line, then fetch:
 
 Defaults only when user did not specify: `tech=react`, `posted_within_days=7`, `level` from their seniority.
 
+**Location limits — say it, then bridge.** The tool and API only filter `tech` / `level` / `posted_within_days` — **no city filter**. If the user names a city (e.g. "only in Bengaluru"):
+
+1. Say it plainly in one line: live cards can't be filtered by city.
+2. Search their stack anyway — a refinement like "only in X" keeps the earlier `tech`, `level`, and `posted_within_days`; only change what they asked to change.
+3. Bridge to the real city list: `https://onlyfrontendjobs.com/jobs?location=<city>` (e.g. `location=bengaluru`).
+
+Never label remote / nearby-city roles as that city's jobs.
+
 ### Step 3 — Rich cards
 
 Use PLUGIN.md card format. No naked UTM strings in visible text. Max 5 jobs.
